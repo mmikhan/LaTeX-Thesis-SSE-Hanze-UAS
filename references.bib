@@ -1,0 +1,863 @@
+% Here one can add their references. A few examples are found below. An efficient way to make these is using scholar.google.com -> find desired article -> click on {"Cite} button -> BibTeX -> copy the content to here. Then the name (e.g. ISO15066 as seen below) can be used in your *.tex file as follows: cite{ISO15066}.
+
+@techreport{ISO15066,
+    type = {Standard},
+    key = {ISO/TS 15066},
+    month = feb,
+    year = {2016},
+    title = {{ISO/TS 15066 Robots and robotic devices - Collaborative robots}},
+    volume = {2016},
+    address = {Geneva, CH},
+    institution = {International Organization for Standardization}
+}
+
+@inproceedings{Saxena2007,
+    abstract = {We consider the problem of grasping novel objects, specifically ones that are being seen for the first time through vision. We present a learning algorithm that neither requires, nor tries to build, a 3-d model of the object. Instead it predicts, directly as a function of the images, a point at which to grasp the object. Our algorithm is trained via supervised learning, using synthetic images for the training set. We demonstrate on a robotic manipulation platform that this approach successfully grasps a wide variety of objects, such as wine glasses, duct tape, markers, a translucent box, jugs, knife-cutters, cellphones, keys, screwdrivers, staplers, toothbrushes, a thick coil of wire, a strangely shaped power horn, and others, none of which were seen in the training set.},
+    author = {Saxena, Ashutosh and Driemeyer, Justin and Kearns, Justin and Ng, Andrew Y},
+    booktitle = {Advances in Neural Information Processing Systems},
+    doi = {10.7551/mitpress/7503.003.0156},
+    file = {:C$\backslash$:/Users/natan/AppData/Local/Mendeley Ltd./Mendeley Desktop/Downloaded/Saxena, Driemeyer, Ng - Unknown - Robotic Grasping of Novel Objects using Vision.pdf:pdf},
+    isbn = {9780262195683},
+    issn = {10495258},
+    mendeley-groups = {A Thesis Definition},
+    pages = {1209--1216},
+    title = {{Robotic grasping of novel objects}},
+    year = {2007}
+}
+
+@book{Sutton2018,
+    abstract = {The significantly expanded and updated new edition of a widely used text on reinforcement learning, one of the most active research areas in artificial intelligence. Reinforcement learning, one of the most active research areas in artificial intelligence, is a computational approach to learning whereby an agent tries to maximize the total amount of reward it receives while interacting with a complex, uncertain environment. In Reinforcement Learning, Richard Sutton and Andrew Barto provide a clear and simple account of the field's key ideas and algorithms. This second edition has been significantly expanded and updated, presenting new topics and updating coverage of other topics. Like the first edition, this second edition focuses on core online learning algorithms, with the more mathematical material set off in shaded boxes. Part I covers as much of reinforcement learning as possible without going beyond the tabular case for which exact solutions can be found. Many algorithms presented in this part are new to the second edition, including UCB, Expected Sarsa, and Double Learning. Part II extends these ideas to function approximation, with new sections on such topics as artificial neural networks and the Fourier basis, and offers expanded treatment of off-policy learning and policy-gradient methods. Part III has new chapters on reinforcement learning's relationships to psychology and neuroscience, as well as an updated case-studies chapter including AlphaGo and AlphaGo Zero, Atari game playing, and IBM Watson's wagering strategy. The final chapter discusses the future societal impacts of reinforcement learning.},
+    address = {Cambridge, MA},
+    author = {Sutton, Richard S. and Barto, Andrew G.},
+    edition = {second edi},
+    file = {:C$\backslash$:/Users/natan/AppData/Local/Mendeley Ltd./Mendeley Desktop/Downloaded/Sutton, Barto - 2018 - Reinforcement Learning An Introduction.pdf:pdf},
+    isbn = {978-0-262-03924-6},
+    mendeley-groups = {A Thesis Definition},
+    pages = {552},
+    publisher = {The MIT Press},
+    title = {{Reinforcement Learning: An Introduction}},
+    year = {2018}
+}
+
+@misc{Saha2018,
+    author = {Saha, Sumit},
+    booktitle = {Towards data Science},
+    mendeley-groups = {Master/SAS Report 1},
+    title = {{A Comprehensive Guide to Convolutional Neural Networks — the ELI5 way | by Sumit Saha | Towards Data Science}},
+    url = {https://towardsdatascience.com/a-comprehensive-guide-to-convolutional-neural-networks-the-eli5-way-3bd2b1164a53},
+    urldate = {2020-06-20},
+    year = {2018}
+}
+
+@article{Shah2020,
+    abstract = {Reward engineering is crucial to high performance in reinforcement learning systems. Prior research into reward design has largely focused on Markovian functions representing the reward. While there has been research into expressing non-Markov rewards as linear temporal logic (LTL) formulas, this has focused on task specifications directly defined by the user. However, in many real-world applications, task specifications are ambiguous, and can only be expressed as a belief over LTL formulas. In this letter, we introduce planning with uncertain specifications (PUnS), a novel formulation that addresses the challenge posed by non-Markovian specifications expressed as beliefs over LTL formulas. We present four criteria that capture the semantics of satisfying a belief over specifications for different applications, and analyze the qualitative implications of these criteria within a synthetic domain. We demonstrate the existence of an equivalent Markov decision process (MDP) for any instance of PUnS. Finally, we demonstrate our approach on the real-world task of setting a dinner table automatically with a robot that inferred task specifications from human demonstrations.},
+    archivePrefix = {arXiv},
+    arxivId = {1906.03218},
+    author = {Shah, Ankit and Li, Shen and Shah, Julie},
+    doi = {10.1109/LRA.2020.2977217},
+    eprint = {1906.03218},
+    file = {:D$\backslash$:/RemoteLab/1906.03218.pdf:pdf},
+    issn = {23773766},
+    journal = {IEEE Robotics and Automation Letters},
+    keywords = {Ai-based methods,learning from demonstrations},
+    mendeley-groups = {Master/SAS Report 1},
+    number = {2},
+    pages = {3414--3421},
+    title = {{Planning with uncertain specifications (PUnS)}},
+    volume = {5},
+    year = {2020}
+}
+
+@techreport{Rajeswaran,
+    abstract = {Dexterous multi-fingered hands are extremely versatile and provide a generic way to perform a multitude of tasks in human-centric environments. However, effectively controlling them remains challenging due to their high dimensionality and large number of potential contacts. Deep reinforcement learning (DRL) provides a model-agnostic approach to control complex dynamical systems, but has not been shown to scale to high-dimensional dexterous manipulation. Furthermore, deployment of DRL on physical systems remains challenging due to sample inefficiency. Consequently, the success of DRL in robotics has thus far been limited to simpler manipulators and tasks. In this work, we show that model-free DRL can effectively scale up to complex manipulation tasks with a high-dimensional 24-DoF hand, and solve them from scratch in simulated experiments. Furthermore, with the use of a small number of human demonstrations, the sample complexity can be significantly reduced, which enables learning with sample sizes equivalent to a few hours of robot experience. The use of demonstrations result in policies that exhibit very natural movements and, surprisingly, are also substantially more robust. We demonstrate successful policies for object relocation, in-hand manipulation, tool use, and door opening, which are shown in the supplementary video.},
+    archivePrefix = {arXiv},
+    arxivId = {1709.10087v2},
+    author = {Rajeswaran, Aravind and Kumar, Vikash and Gupta, Abhishek and Vezzani, Giulia and Schulman, John and Todorov, Emanuel and Levine, Sergey},
+    eprint = {1709.10087v2},
+    file = {:C$\backslash$:/Users/natan/AppData/Local/Mendeley Ltd./Mendeley Desktop/Downloaded/Rajeswaran et al. - Unknown - Learning Complex Dexterous     Manipulation with Deep Reinforcement Learning and Demonstrations.pdf:pdf},
+    mendeley-groups = {Master/SAS Report 1,A Thesis Definition},
+    title = {{Learning Complex Dexterous Manipulation with Deep Reinforcement Learning and Demonstrations}},
+    url = {http://sites.google.com/view/deeprl-dexterous-manipulation}
+}
+
+@article{Polydoros2017,
+    abstract = {Reinforcement learning is an appealing approach for allowing robots to learn new tasks. Relevant literature reveals a plethora of methods, but at the same time makes clear the lack of implementations for dealing with real life challenges. Current expectations raise the demand for adaptable robots. We argue that, by employing model-based reinforcement learning, the—now limited—adaptability characteristics of robotic systems can be expanded. Also, model-based reinforcement learning exhibits advantages that makes it more applicable to real life use-cases compared to model-free methods. Thus, in this survey, model-based methods that have been applied in robotics are covered. We categorize them based on the derivation of an optimal policy, the definition of the returns function, the type of the transition model and the learned task. Finally, we discuss the applicability of model-based reinforcement learning approaches in new applications, taking into consideration the state of the art in both algorithms and hardware.},
+    author = {Polydoros, Athanasios S. and Nalpantidis, Lazaros},
+    doi = {10.1007/s10846-017-0468-y},
+    issn = {15730409},
+    journal = {Journal of Intelligent and Robotic Systems: Theory and Applications},
+    keywords = {Intelligent robotics,Machine learning,Model-based reinforcement learning,Policy search,Reward functions,Robot learning,Transition models},
+    mendeley-groups = {Master/SAS Report 1,A Thesis Definition},
+    month = may,
+    number = {2},
+    pages = {153--173},
+    publisher = {Springer Netherlands},
+    title = {{Survey of Model-Based Reinforcement Learning: Applications on Robotics}},
+    url = {https://link.springer.com/article/10.1007/s10846-017-0468-y},
+    volume = {86},
+    year = {2017}
+}
+
+@inproceedings{Girshick2014,
+    abstract = {Object detection performance, as measured on the canonical PASCAL VOC dataset, has plateaued in the last few years. The best-performing methods are complex ensemble systems that typically combine multiple low-level image features with high-level context. In this paper, we propose a simple and scalable detection algorithm that improves mean average precision (mAP) by more than 30{\%} relative to the previous best result on VOC 2012 - achieving a mAP of 53.3{\%}. Our approach combines two key insights: (1) one can apply high-capacity convolutional neural networks (CNNs) to bottom-up region proposals in order to localize and segment objects and (2) when labeled training data is scarce, supervised pre-training for an auxiliary task, followed by domain-specific fine-tuning, yields a significant performance boost. Since we combine region proposals with CNNs, we call our method R-CNN: Regions with CNN features. We also present experiments that provide insight into what the network learns, revealing a rich hierarchy of image features. Source code for the complete system is available at http://www.cs.berkeley.edu},
+    archivePrefix = {arXiv},
+    arxivId = {1311.2524},
+    author = {Girshick, Ross and Donahue, Jeff and Darrell, Trevor and Malik, Jitendra},
+    booktitle = {Proceedings of the IEEE Computer Society Conference on Computer Vision and Pattern Recognition},
+    doi = {10.1109/CVPR.2014.81},
+    eprint = {1311.2524},
+    file = {:C$\backslash$:/Users/natan/AppData/Local/Mendeley Ltd./Mendeley Desktop/Downloaded/Girshick et al. - Unknown - Rich feature hierarchies for accurate object detection and semantic segmentation Tech report (v5).pdf:pdf},
+    isbn = {9781479951178},
+    issn = {10636919},
+    mendeley-groups = {Master/SAS Report 1,A Thesis Definition},
+    pages = {580--587},
+    title = {{Rich feature hierarchies for accurate object detection and semantic segmentation}},
+    year = {2014}
+}
+
+@article{Girshick2015,
+    abstract = {This paper proposes a Fast Region-based Convolutional Network method (Fast R-CNN) for object detection. Fast R-CNN builds on previous work to efficiently classify object proposals using deep convolutional networks. Compared to previous work, Fast R-CNN employs several innovations to improve training and testing speed while also increasing detection accuracy. Fast R-CNN trains the very deep VGG16 network 9x faster than R-CNN, is 213x faster at test-time, and achieves a higher mAP on PASCAL VOC 2012. Compared to SPPnet, Fast R-CNN trains VGG16 3x faster, tests 10x faster, and is more accurate. Fast R-CNN is implemented in Python and C++ (using Caffe) and is available under the open-source MIT License at https://github.com/rbgirshick/fast-rcnn.},
+    archivePrefix = {arXiv},
+    arxivId = {1504.08083},
+    author = {Girshick, Ross},
+    doi = {10.1109/ICCV.2015.169},
+    eprint = {1504.08083},
+    file = {:C$\backslash$:/Users/natan/AppData/Local/Mendeley Ltd./Mendeley Desktop/Downloaded/Girshick - 2015 - Fast R-CNN.pdf:pdf},
+    isbn = {9781467383912},
+    issn = {15505499},
+    journal = {Proceedings of the IEEE International Conference on Computer Vision},
+    mendeley-groups = {Master/SAS Report 1,A Thesis Definition},
+    pages = {1440--1448},
+    title = {{Fast R-CNN}},
+    volume = {2015 Inter},
+    year = {2015}
+}
+
+@article{Ren2017,
+    abstract = {State-of-the-art object detection networks depend on region proposal algorithms to hypothesize object locations. Advances like SPPnet [1] and Fast R-CNN [2] have reduced the running time of these detection networks, exposing region proposal computation as a bottleneck. In this work, we introduce a Region Proposal Network (RPN) that shares full-image convolutional features with the detection network, thus enabling nearly cost-free region proposals. An RPN is a fully convolutional network that simultaneously predicts object bounds and objectness scores at each position. The RPN is trained end-to-end to generate high-quality region proposals, which are used by Fast R-CNN for detection. We further merge RPN and Fast R-CNN into a single network by sharing their convolutional features - using the recently popular terminology of neural networks with 'attention' mechanisms, the RPN component tells the unified network where to look. For the very deep VGG-16 model [3], our detection system has a frame rate of 5 fps (including all steps) on a GPU, while achieving state-of-the-art object detection accuracy on PASCAL VOC 2007, 2012, and MS COCO datasets with only 300 proposals per image. In ILSVRC and COCO 2015 competitions, Faster R-CNN and RPN are the foundations of the 1st-place winning entries in several tracks. Code has been made publicly available.},
+    archivePrefix = {arXiv},
+    arxivId = {1506.01497},
+    author = {Ren, Shaoqing and He, Kaiming and Girshick, Ross and Sun, Jian},
+    doi = {10.1109/TPAMI.2016.2577031},
+    eprint = {1506.01497},
+    file = {:C$\backslash$:/Users/natan/AppData/Local/Mendeley Ltd./Mendeley Desktop/Downloaded/Ren et al. - Unknown - Faster R-CNN Towards   Real-Time Object Detection with Region Proposal Networks.pdf:pdf},
+    issn = {01628828},
+    journal = {IEEE Transactions on Pattern Analysis and Machine Intelligence},
+    keywords = {Object detection,convolutional neural network,region proposal},
+    mendeley-groups = {Master/SAS Report 1,A Thesis Definition},
+    number = {6},
+    pages = {1137--1149},
+    pmid = {27295650},
+    title = {{Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks}},
+    url = {http://image-net.org/challenges/LSVRC/2015/results},
+    volume = {39},
+    year = {2017}
+}
+
+@article{He2020,
+    %abstract = {We present a conceptually simple, flexible, and general framework for object instance segmentation. Our approach efficiently detects objects in an image while simultaneously generating a high-quality segmentation mask for each instance. The method, called Mask R-CNN, extends Faster R-CNN by adding a branch for predicting an object mask in parallel with the existing branch for bounding box recognition. Mask R-CNN is simple to train and adds only a small overhead to Faster R-CNN, running at 5 fps. Moreover, Mask R-CNN is easy to generalize to other tasks, e.g., allowing us to estimate human poses in the same framework. We show top results in all three tracks of the COCO suite of challenges, including instance segmentation, bounding-box object detection, and person keypoint detection. Without bells and whistles, Mask R-CNN outperforms all existing, single-model entries on every task, including the COCO 2016 challenge winners. We hope our simple and effective approach will serve as a solid baseline and help ease future research in instance-level recognition. Code has been made available at: https://github.com/facebookresearch/Detectron},
+    archivePrefix = {arXiv},
+    arxivId = {1703.06870},
+    author = {He, Kaiming and Gkioxari, Georgia and Doll{\'{a}}r, Piotr and Girshick, Ross},
+    doi = {10.1109/TPAMI.2018.2844175},
+    eprint = {1703.06870},
+    file = {:C$\backslash$:/Users/natan/AppData/Local/Mendeley Ltd./Mendeley Desktop/Downloaded/He et al. - Unknown - Mask R-CNN.pdf:pdf},
+    issn = {19393539},
+    journal = {IEEE Transactions on Pattern Analysis and Machine Intelligence},
+    keywords = {Instance segmentation,convolutional neural network,object detection,pose estimation},
+    mendeley-groups = {Master/SAS Report 1,A Thesis Definition},
+    number = {2},
+    pages = {386--397},
+    pmid = {29994331},
+    title = {{Mask R-CNN}},
+    volume = {42},
+    year = {2020}
+}
+
+@misc{Detectron2018,
+  author =       {Ross Girshick and Ilija Radosavovic and Georgia Gkioxari and
+                  Piotr Doll\'{a}r and Kaiming He},
+  title =        {Detectron},
+  howpublished = {\url{https://github.com/facebookresearch/detectron}},
+  year =         {2018}
+}
+
+@misc{yolowebsite,
+    mendeley-groups = {Master/SAS Report 1,A Thesis Definition},
+    title = {{YOLO: Real-Time Object Detection}},
+    url = {https://pjreddie.com/darknet/yolo},
+    urldate = {2020-06-20}
+}
+
+@article{yolov3,
+  title={YOLOv3: An Incremental Improvement},
+  author={Redmon, Joseph and Farhadi, Ali},
+  journal = {arXiv},
+  year={2018}
+}
+
+@misc{Debkowski,
+    author = {Debkowski, Damian},
+    mendeley-groups = {Master/SAS Report 1,Cobot Research Proposal,A Thesis Definition},
+    title = {{SuperBadCode/Depth-Mask-RCNN: Using Kinect2 Depth Sensors To Train Neural Network For Object Detection {\&} Interaction}},
+    url = {https://github.com/SuperBadCode/Depth-Mask-RCNN},
+    urldate = {2020-06-20}
+}
+
+@book{Siciliano2016,
+    abstract = {The second edition of this handbook provides a state-of-the-art cover view on the various aspects in the rapidly developing field of robotics. Reaching for the human frontier, robotics is vigorously engaged in the growing challenges of new emerging domains. Interacting, exploring, and working with humans, the new generation of robots will increasingly touch people and their lives. The credible prospect of practical robots among humans is the result of the scientific endeavour of a half a century of robotic developments that established robotics as a modern scientific discipline. The ongoing vibrant expansion and strong growth of the field during the last decade has fueled this second edition of the Springer Handbook of Robotics. The first edition of the handbook soon became a landmark in robotics publishing and won the American Association of Publishers PROSE Award for Excellence in Physical Sciences {\&} Mathematics as well as the organization's Award for Engineering {\&} Technology. The second edition of the handbook, edited by two internationally renowned scientists with the support of an outstanding team of seven part editors and more than 200 authors, continues to be an authoritative reference for robotics researchers, newcomers to the field, and scholars from related disciplines. The contents have been restructured to achieve four main objectives: the enlargement of foundational topics for robotics, the enlightenment of design of various types of robotic systems, the extension of the treatment on robots moving in the environment, and the enrichment of advanced robotics applications. Further to an extensive update, fifteen new chapters have been introduced on emerging topics, and a new generation of authors have joined the handbook's team. A novel addition to the second edition is a comprehensive collection of multimedia references to more than 700 videos, which bring valuable insight into the contents. The videos can be viewed directly augmented into the text with a smartphone or tablet using a unique and specially designed app.},
+    author = {Siciliano, Bruno and Khatib, Oussama},
+    booktitle = {Springer Handbook of Robotics},
+    doi = {10.1007/978-3-319-32552-1},
+    file = {:C$\backslash$:/Users/natan/AppData/Local/Mendeley Ltd./Mendeley Desktop/Downloaded/Siciliano, Khatib - 2016 -     Springer handbook of robotics.pdf:pdf},
+    isbn = {9783319325521},
+    keywords = {Basic principles and methods of robotics,Biologically-inspired robots,Human-robot interaction,Industrial     robotics,Life-like robotics,Manipulation and interfaces of robots,Mobile and distributed robotics,Roboethics,Robot structures,Robotics,Robotics foundations,Sensing and perception of robots,Springer handbook of robotics},
+    mendeley-groups = {A Thesis Definition},
+    month = jan,
+    pages = {1--2227},
+    publisher = {Springer International Publishing},
+    title = {{Springer handbook of robotics}},
+    year = {2016}
+}
+
+@book{Torras1992,
+    abstract = {The book covers the fundamentals of both 2D and 3D Computer Vision and theirmost widespread industrial applications, such as automated inspection, robotguidance and workpiece acquistion. The level of explanation is that of an unusual introductory text, in the sense that, besides the basic material, some punctuate advanced topics are included in each chapter, together with an extensive bibliography for experts to follow up. The book was carefully planned so as to cover the different aspects of Computer Vision evenly and following a unified line of exposition. The result has been that the book is not biased towards any particular topic or approach. Well-known experts on each of the topics were appointed to write a chapter under the guidelines provided by the editor. The chapters were revised by the editor to ensure homogeneity and coherence. In short, the book has the rigour and balance of a single-author textbook, but without losing the benefits derived from the variety of outlooks characteristic of multi-author volumes. Readers will acquire a solid background on the techniques used at the successive stages of the vision process, as well as a broad view of the possibilities of applying this new technology in industry.},
+    author = {Torras, Carme.},
+    isbn = {3642486754},
+    mendeley-groups = {Master/SAS Report 1,A Thesis Definition},
+    pages = {455},
+    publisher = {Springer Berlin Heidelberg},
+    title = {{Computer Vision: Theory and Industrial Applications}},
+    year = {1992}
+}
+
+@inproceedings{Shafii2016,
+    abstract = {Robots are still not able to grasp all unforeseen objects. Finding a proper grasp configuration, i.e. the position and orientation of the arm relative to the object, is still challenging. One approach for grasping unforeseen objects is to recognize an appropriate grasp configuration from previous grasp demonstrations. The underlying assumption in this approach is that new objects that are similar to known ones (i.e. they are familiar) can be grasped in a similar way. However finding a grasp representation and a grasp similarity metric is still the main challenge in developing an approach for grasping familiar objects. In this paper, interactive object view learning and recognition capabilities are integrated in the process of learning and recognizing grasps. The object view recognition module uses an interactive incremental learning approach to recognize object view labels. The grasp pose learning approach uses local and global visual features of a demonstrated grasp to learn a grasp template associated with the recognized object view. A grasp distance measure based on Mahalanobis distance is used in a grasp template matching approach to recognize an appropriate grasp pose. The experimental results demonstrate the high reliabilityof the developed template matching approach in recognizing the grasp poses. Experimental results also show how the robot can incrementally improve its performance in grasping familiar objects.},
+    author = {Shafii, Nima and Kasaei, S. Hamidreza and Lopes, Lu{\'{i}}s Seabra},
+    booktitle = {IEEE International Conference on Intelligent Robots and Systems},
+    doi = {10.1109/IROS.2016.7759448},
+    isbn = {9781509037629},
+    issn = {21530866},
+    mendeley-groups = {A Thesis Definition},
+    month = nov,
+    pages = {2895--2900},
+    publisher = {Institute of Electrical and Electronics Engineers Inc.},
+    title = {{Learning to grasp familiar objects using object view recognition and template matching}},
+    volume = {2016-Novem},
+    year = {2016}
+}
+
+@inproceedings{Kumra2017,
+    abstract = {Deep learning has significantly advanced computer vision and natural language processing. While there have been some successes in robotics using deep learning, it has not been widely adopted. In this paper, we present a novel robotic grasp detection system that predicts the best grasping pose of a parallel-plate robotic gripper for novel objects using the RGB-D image of the scene. The proposed model uses a deep convolutional neural network to extract features from the scene and then uses a shallow convolutional neural network to predict the grasp configuration for the object of interest. Our multi-modal model achieved an accuracy of 89.21{\%} on the standard Cornell Grasp Dataset and runs at real-time speeds. This redefines the state-of-the-art for robotic grasp detection.},
+    archivePrefix = {arXiv},
+    arxivId = {1611.08036},
+    author = {Kumra, Sulabh and Kanan, Christopher},
+    booktitle = {IEEE International Conference on Intelligent Robots and Systems},
+    doi = {10.1109/IROS.2017.8202237},
+    eprint = {1611.08036},
+    file = {:C$\backslash$:/Users/natan/AppData/Local/Mendeley Ltd./Mendeley Desktop/Downloaded/Kumra, Kanan - 2016 - Robotic Grasp Detection using Deep Convolutional Neural Networks.pdf:pdf},
+    isbn = {9781538626825},
+    issn = {21530866},
+    mendeley-groups = {A Thesis Definition},
+    month = nov,
+    pages = {769--776},
+    publisher = {Institute of Electrical and Electronics Engineers Inc.},
+    title = {{Robotic grasp detection using deep convolutional neural networks}},
+    url = {http://arxiv.org/abs/1611.08036},
+    volume = {2017-Septe},
+    year = {2017}
+}
+
+@article{Sutton1988,
+    abstract = {This article in troduces a class of incremen tal learning procedures specialized for prediction?that is? for using past experience with an incompletely kno wn system to predict its future behavior. Whereas conventional prediction learning methods assign credit by means of the difference between predicted and actual outcomes the new methods assign credit by means of the difference bet een temporally successive predictions. Although such temporal difference methods have been used in Samuel's checker player, Holland's bucket brigade, and the author's Adaptive Heuristic Critic, they have remained poorly understood. Here we prove their convergence and optimality for special cases and relate them to supervised-learning methods. For most real-world prediction problems, temporal-difference methods require less memory and less peak computation than conventional methods; and they produce more accurate predictions. We argue that most problems which supervised learning is currently applied are really prediction problems of the sort to which temporal-difference methods can be applied to advantage.},
+    author = {Sutton, Richard S.},
+    doi = {10.1007/bf00115009},
+    file = {:C$\backslash$:/Users/natan/AppData/Local/Mendeley Ltd./Mendeley Desktop/Downloaded/Sutton - 1988 - Learning to predict by the methods of temporal differences.pdf:pdf},
+    issn = {0885-6125},
+    journal = {Machine Learning},
+    keywords = {Incremental learning,connectionism,credit assignment,evaluation flmctions,prediction},
+    mendeley-groups = {A Thesis Definition},
+    month = aug,
+    number = {1},
+    pages = {9--44},
+    publisher = {Springer Nature},
+    title = {{Learning to predict by the methods of temporal differences}},
+    url = {https://link.springer.com/article/10.1007/BF00115009},
+    volume = {3},
+    year = {1988}
+}
+
+@article{Rummery1994,
+    abstract = {Reinforcement learning algorithms are a powerful machine learning technique. However, much of the work on these algorithms has been developed with regard to discrete enite-state Markovian problems, which is too restrictive for many real-world environments. Therefore, it is desirable to extend these methods to high dimensional continuous state-spaces, which requires the use of function approximation to gener-alise the information learnt by the system. In this report, the use of back-propagation neural networks (Rumelhart, Hinton and Williams 1986) is considered in this context. We consider a number of diierent algorithms based around Q-Learning (Watkins 1989) combined with the Temporal Diierence algorithm (Sutton 1988), including a new algorithm (Modiied Connectionist Q-Learning), and Q() (Peng and Williams 1994). In addition, we present algorithms for applying these updates on-line during trials, unlike backward replay used by Lin (1993) that requires waiting until the end of each trial before updating can occur. On-line updating is found to be more robust to the choice of training parameters than backward replay, and also enables the algorithms to be used in continuously operating systems where no end of trial conditions occur. We compare the performance of these algorithms on a realistic robot navigation problem, where a simulated mobile robot is trained to guide itself to a goal position in the presence of obstacles. The robot must rely on limited sensory feedback from its surroundings, and make decisions that can be generalised to arbitrary layouts of obstacles. These simulations show that on-line learning algorithms are less sensitive to the choice of training parameters than backward replay, and that the alternative update rules of MCQ-L and Q() are more robust than standard Q-learning updates.},
+    author = {Rummery, G A and Niranjan, M},
+    file = {:C$\backslash$:/Users/natan/AppData/Local/Mendeley Ltd./Mendeley Desktop/Downloaded/Rummery, Niranjan - 1994 - ON-LINE Q-LEARNING USING CONNECTIONIST SYSTEMS.pdf:pdf},
+    journal = {Update},
+    mendeley-groups = {A Thesis Definition},
+    number = {September},
+    title = {{On-line q-learning using connectionist systems cued/f-infeng/tr 166}},
+    year = {1994}
+}
+
+@techreport{Zapryanov2008,
+    abstract = {The image registration by digital cameras and video cameras requires digital filters to be posed onto the photo-sensitive sensors (CCD and CMOS). The filters are arranged in patterns across the face of the image sensing array. The most commonly used color filter array is Bayer pattern. An alternative of this pattern is a Pseudo-Random Bayer color filter array (CFA). Its structure differs considerably from the regular structure of the original Bayer filter. The purpose of this research is to present a comparison and evaluation of both color filters, based on two criteria: an objective-peak signal-to-noise ratio (PSNR) and subjective (visual quality). The filters efficiency is assessed by experimental studies on a set of test images-vector and real photographic ones. The results obtained during the experiments are presented and discussed.},
+    author = {Zapryanov, Georgi and Nikolova, Iva},
+    file = {:C$\backslash$:/Users/natan/AppData/Local/Mendeley Ltd./Mendeley Desktop/Downloaded/Zapryanov, Nikolova - 2008 - Comparative Study of Demosaicing    Algorithms for Bayer and Pseudo-Random Bayer Color Filter Array Image-base.pdf:pdf},
+    keywords = {Bayer filter,CFA interpolation,Demosaicing,Pseudo-Random Bayer filter,mean squared error (MSE),peak signal-to-noise ratio (PSNR)},
+    mendeley-groups = {Master/SAS Report 1,A Thesis Definition},
+    title = {{Comparative Study of Demosaicing Algorithms for Bayer and Pseudo-Random Bayer Color Filter Array Image-based 3D reconstruction using camera View project Comparative Study of Demosaicing Algorithms for Bayer and Pseudo-Random Bayer Color Filter Arrays}},
+    url = {https://www.researchgate.net/publication/256696331},
+    year = {2008}
+}
+
+@book{Holst2018,
+    abstract = {2nd ed. The fully updated edition of this bestseller addresses CMOS/CCD differences, similarities, and applications, including architecture concepts and operation, such as full-frame, interline transfer, progressive scan, color filter arrays, rolling shutters, 3T, 4T, 5T, and 6T. The authors discuss novel designs, illustrate sampling theory and aliasing with numerous examples, and describe the advantages and limitations of small pixels. 1. Introduction: 1.1. Solid-state detectors; 1.2. Imaging system applications; 1.3. Configurations; 1.4. Image quality; 1.5. Pixels, datels, disels, and resells; 1.6. References -- 2. Radiometry and photometry: 2.1. Radiative transfer; 2.2. Planck's blackbody law; 2.3. Photometry; 2.4. Sources; 2.5. Point sources and extended sources; 2.6. Camera formula; 2.7. Normalization; 2.8. Normalization issues; 2.9. References -- 3. CCD fundamentals: 3.1. Photodetection; 3.2. CCD array operation; 3.3. CCD array architecture; 3.4. Charge conversion (output structure); 3.5. Correlated double sampling; 3.6. Overflow drain; 3.7. Low light level devices; 3.8. Charge injection device (CID); 3.9. Well capacity; 3.10. References -- 4. CMOS fundamentals: 4.1. CCD and CMOS arrays: key differences; 4.2. CMOS arrays: predictions and reality; 4.3. Pixel electronics; 4.4. CMOS architectures; 4.5. CMOS future; 4.6. References -- 5. Array parameters: 5.1. Number of detectors; 5.2. Optical format; 5.3. Dark pixels; 5.4. Microlenses; 5.5. Quantum efficiency; 5.6. Creating color; 5.7. Defects; 5.8. References -- 6. Sensitivity: 6.1. Responsivity; 6.2. Dark current; 6.3. Maximum signal; 6.4. Noise; 6.5. Dynamic range; 6.6. Photon transfer and mean-variance; 6.7. Signal-to-noise ratio; 6.8. Noise equivalent inputs; 6.9. Lux transfer; 6.10. Speed -- ISO rating; 6.11. References 7. Camera design: 7.1. Camera operation; 7.2. Optical design; 7.3. Analog-to-digital converters; 7.4. Image processing; 7.5. Video formats; 7.6. CRT overview; 7.7. Flat panel displays; 7.8. Computer interface; 7.9. References -- 8. Linear system theory: 8.1. Linear system theory; 8.2. Electronic imaging system; 8.3. MTF and PTF interpretation; 8.4. Superposition applied to optical systems -- 9. Sampling: 9.1. Sampling theorem; 9.2. Aliasing; 9.3. Image distortion; 9.4. Array Nyquist frequency; 9.5. CFA Nyquist frequency; 9.6. Reconstruction; 9.7. Multiple samplers; 9.8. References -- 10. MTF: 10.1. Frequency domains; 10.2. Optics; 10.3. Detectors; 10.4. Diffusion; 10.5. Optical crosstalk; 10.6. "Color" MTF; 10.7. Sampling "MTF"; 10.8. Charge transfer efficiency; 10.9. TDI; 10.10. Motion; 10.11. Digital filters; 10.12. Reconstruction; 10.13. Boost; 10.14. CRT display; 10.15. Flat panel displays; 10.16. Printer MTF; 10.17. The observer; 10.18. Intensified CCD; 10.19. References -- 11. Image quality: 11.1. Resolution metrics; 11.2. Optical resolution; 11.3. Detector resolution; 11.4. Electrical resolution metric; 11.5. MTF-based resolution; 11.6. Display resolution; 11.7. Spurious response; 11.8. Observer-based resolution; 11.9. Viewing distance; 11.10. Image reconstruction; 11.11. References -- 12. Range performance: 12.1. Atmospheric transmittance; 12.2. Target contrast; 12.3. Contrast transmittance; 12.4. Range predictions; 12.5. References -- Appendix: f-number -- Index.},
+    author = {Holst, Gerald C. and Lomheim, Terrence S.},
+    booktitle = {CMOS/CCD Sensors and Camera Systems, Second Edition},
+    doi = {10.1117/3.2524677},
+    isbn = {9780819486530},
+    mendeley-groups = {Master/SAS Report 1,A Thesis Definition},
+    pages = {388},
+    publisher = {JCD Publishing},
+    title = {{CMOS/CCD Sensors and Camera Systems, Second Edition}},
+    year = {2018}
+}
+
+@misc{Intel2019,
+    author = {Intel},
+    booktitle = {Https://Www.Intelrealsense.Com/Depth-Camera-D435/},
+    mendeley-groups = {A Thesis Definition},
+    title = {{Depth Camera D435i – Intel{\textregistered} RealSense™ Depth and Tracking Cameras}},
+    url = {https://www.intelrealsense.com/depth-camera-d435i},
+    year = {2019}
+}
+
+@book{Zanuttigh2016,
+    abstract = {This book provides a comprehensive overview of the key technologies and applications related to new cameras that have brought 3D data acquisition to the mass market. It covers both the theoretical principles behind the acquisition devices and the practical implementation aspects of the computer vision algorithms needed for the various applications. Real data examples are used in order to show the performances of the various algorithms. The performance and limitations of the depth camera technology are explored, along with an extensive review of the most effective methods for addressing challenges in common applications. Applications covered in specific detail include scene segmentation, 3D scene reconstruction, human pose estimation and tracking and gesture recognition. This book offers students, practitioners and researchers the tools necessary to explore the potential uses of depth data in light of the expanding number of devices available for sale. It explores the impact of these devices on the rapidly growing field of depth-based computer vision.},
+    author = {Zanuttigh, Pietro and Mutto, Carlo Dal and Minto, Ludovico and Marin, Giulio and Dominio, Fabio and Cortelazzo, Guido Maria},
+    booktitle = {Time-of-Flight and Structured Light Depth Cameras: Technology and Applications},
+    doi = {10.1007/978-3-319-30973-6},
+    file = {:C$\backslash$:/Users/natan/AppData/Local/Mendeley Ltd./Mendeley Desktop/Downloaded/Zanuttigh et al. - 2016 - Time-of-flight and structured light    depth cameras Technology and applications.pdf:pdf},
+    isbn = {9783319309736},
+    mendeley-groups = {A Thesis Definition},
+    month = jan,
+    pages = {1--355},
+    publisher = {Springer International Publishing},
+    title = {{Time-of-flight and structured light depth cameras: Technology and applications}},
+    year = {2016}
+}
+
+@book{martinello2012coded,
+  title={Coded Aperture Imaging},
+  author={Martinello, M.},
+  url={https://books.google.nl/books?id=k\_4qnwEACAAJ},
+  year={2012},
+  publisher={Heriot-Watt University}
+}
+
+@article{Rahman2018,
+    abstract = {In this paper, the implementation of two Reinforcement learnings namely, Q Learning and Deep Q Network(DQN) on a Self Balancing Robot Gazebo model has been discussed. The goal of the experiments is to make the robot model learn the best actions for staying balanced in an environment. The more time it can stay within a specified limit , the more reward it accumulates and hence more balanced it is. Different experiments with different learning parameters on Q Learning and DQN are conducted and the plots of the experiments are shown.},
+    archivePrefix = {arXiv},
+    arxivId = {1807.08272},
+    author = {Rahman, MD Muhaimin and Rashid, S. M. Hasanur and Hossain, M. M.},
+    doi = {10.1186/s40638-018-0091-9},
+    eprint = {1807.08272},
+    issn = {2197-3768},
+    journal = {Robotics and Biomimetics},
+    mendeley-groups = {A Thesis Definition},
+    number = {1},
+    pages = {4--9},
+    publisher = {Springer Berlin Heidelberg},
+    title = {{Implementation of Q learning and deep Q network for controlling a self balancing robot model}},
+    url = {https://doi.org/10.1186/s40638-018-0091-9},
+    volume = {5},
+    year = {2018}
+}
+
+@inproceedings{Joshi2020,
+    author = {Joshi, Shirin and Kumra, Sulabh and Sahin, Ferat},
+    booktitle = {2020 IEEE 16th International Conference on Automation Science and Engineering (CASE)},
+    doi = {10.1109/CASE48305.2020.9216986},
+    file = {:C$\backslash$:/Users/natan/AppData/Local/Mendeley Ltd./Mendeley Desktop/Downloaded/Joshi, Kumra, Sahin - 2020 - Robotic Grasping using Deep Reinforcement Learning.pdf:pdf},
+    isbn = {978-1-7281-6904-0},
+    mendeley-groups = {A Thesis Definition},
+    month = aug,
+    pages = {1461--1466},
+    publisher = {IEEE},
+    title = {{Robotic Grasping using Deep Reinforcement Learning}},
+    url = {https://ieeexplore.ieee.org/document/9216986/},
+    year = {2020}
+}
+
+@article{Zhang2015,
+    abstract = {This paper introduces a machine learning based system for controlling a robotic manipulator with visual perception only. The capability to autonomously learn robot controllers solely from raw-pixel images and without any prior knowledge of configuration is shown for the first time. We build upon the success of recent deep reinforcement learning and develop a system for learning target reaching with a three-joint robot manipulator using external visual observation. A Deep Q Network (DQN) was demonstrated to perform target reaching after training in simulation. Transferring the network to real hardware and real observation in a naive approach failed, but experiments show that the network works when replacing camera images with synthetic images.},
+    archivePrefix = {arXiv},
+    arxivId = {1511.03791},
+    author = {Zhang, Fangyi and Leitner, J{\"{u}}rgen and Milford, Michael and Upcroft, Ben and Corke, Peter},
+    eprint = {1511.03791},
+    file = {:C$\backslash$:/Users/natan/AppData/Local/Mendeley Ltd./Mendeley Desktop/Downloaded/Zhang et al. - 2015 - Towards Vision-Based Deep Reinforcement Learning for Robotic Motion Control.pdf:pdf},
+    mendeley-groups = {A Thesis Definition},
+    month = nov,
+    title = {{Towards Vision-Based Deep Reinforcement Learning for Robotic Motion Control}},
+    url = {http://arxiv.org/abs/1511.03791},
+    year = {2015}
+}
+
+@article{Hase2020,
+    abstract = {In this paper we introduce the first reinforcement learning (RL) based robotic navigation method which utilizes ultrasound (US) images as an input. Our approach combines state-of-the-art RL techniques, specifically deep Q-networks (DQN) with memory buffers and a binary classifier for deciding when to terminate the task. Our method is trained and evaluated on an in-house collected data-set of 34 volunteers and when compared to pure RL and supervised learning (SL) techniques, it performs substantially better, which highlights the suitability of RL navigation for US-guided procedures. When testing our proposed model, we obtained a 82.91{\%} chance of navigating correctly to the sacrum from 165 different starting positions on 5 different unseen simulated environments.},
+    archivePrefix = {arXiv},
+    arxivId = {2003.13321},
+    author = {Hase, Hannes and Azampour, Mohammad Farid and Tirindelli, Maria and Paschali, Magdalini and Simson, Walter and Fatemizadeh, Emad and Navab, Nassir},
+    eprint = {2003.13321},
+    file = {:C$\backslash$:/Users/natan/AppData/Local/Mendeley Ltd./Mendeley Desktop/Downloaded/Hase et al. - 2020 - Ultrasound-Guided Robotic Navigation with Deep Reinforcement Learning.pdf:pdf},
+    mendeley-groups = {A Thesis Definition},
+    month = mar,
+    title = {{Ultrasound-Guided Robotic Navigation with Deep Reinforcement Learning}},
+    url = {http://arxiv.org/abs/2003.13321},
+    year = {2020}
+}
+
+@article{Morrison2020,
+    abstract = {We present a novel approach to perform object-independent grasp synthesis from depth images via deep neural networks. Our generative grasping convolutional neural network (GG-CNN) predicts a pixel-wise grasp quality that can be deployed in closed-loop grasping scenarios. GG-CNN overcomes shortcomings in existing techniques, namely discrete sampling of grasp candidates and long computation times. The network is orders of magnitude smaller than other state-of-the-art approaches while achieving better performance, particularly in clutter. We run a suite of real-world tests, during which we achieve an 84{\%} grasp success rate on a set of previously unseen objects with adversarial geometry and 94{\%} on household items. The lightweight nature enables closed-loop control of up to 50 Hz, with which we observed 88{\%} grasp success on a set of household objects that are moved during the grasp attempt. We further propose a method combining our GG-CNN with a multi-view approach, which improves overall grasp success rate in clutter by 10{\%}. Code is provided at https://github.com/dougsm/ggcnn},
+    author = {Morrison, Douglas and Corke, Peter and Leitner, J{\"{u}}rgen},
+    doi = {10.1177/0278364919859066},
+    file = {:C$\backslash$:/Users/natan/AppData/Local/Mendeley Ltd./Mendeley Desktop/Downloaded/Morrison, Corke, Leitner - 2020 - Learning robust, real-time, reactive robotic grasping.pdf:pdf},
+    issn = {0278-3649},
+    journal = {The International Journal of Robotics Research},
+    keywords = {Grasping,learning,vision},
+    mendeley-groups = {A Thesis Definition},
+    month = mar,
+    number = {2-3},
+    pages = {183--201},
+    publisher = {SAGE Publications Inc.},
+    title = {{Learning robust, real-time, reactive robotic grasping}},
+    url = {http://journals.sagepub.com/doi/10.1177/0278364919859066},
+    volume = {39},
+    year = {2020}
+}
+
+@software{UniversalRobotsROSDriver,
+    %mendeley-groups = {ROS Tutorial,A Thesis Definition},
+    title = {{UniversalRobots/Universal\_Robots\_ROS\_Driver: Driver enabling ROS operation of UR robots.}},
+    url = {https://github.com/UniversalRobots/Universal_Robots_ROS_Driver},
+    urldate = {2020-08-05}
+}
+
+@software{rosmelodic,
+  author = {{Stanford Artificial Intelligence Laboratory et al.}},
+  title = {Robotic Operating System},
+  url = {https://www.ros.org},
+  version = {ROS Melodic Morenia},
+  date = {2018-05-23},
+}
+
+@software{robotiqros,
+    %mendeley-groups = {A Thesis Definition},
+    title = {{ros-industrial/robotiq: Robotiq packages (http://wiki.ros.org/robotiq)}},
+    url = {https://github.com/ros-industrial/robotiq},
+    urldate = {2020-10-19}
+}
+
+@misc{realsenseros,
+    %mendeley-groups = {A Thesis Definition},
+    title = {{Intel(R) RealSense(TM) ROS Wrapper for D400 series, SR300 Camera and T265 Tracking Module: IntelRealSense/realsense-ros}},
+    url = {https://github.com/IntelRealSense/realsense-ros},
+    year = {2019}
+}
+
+@inproceedings{abadi2016tensorflow,
+  title={Tensorflow: A system for large-scale machine learning},
+  author={Abadi, Mart{\'\i}n and Barham, Paul and Chen, Jianmin and Chen, Zhifeng and Davis, Andy and Dean, Jeffrey and Devin, Matthieu and Ghemawat, Sanjay and Irving, Geoffrey and Isard, Michael and others},
+  booktitle={12th $\{$USENIX$\}$ Symposium on Operating Systems Design and Implementation ($\{$OSDI$\}$ 16)},
+  pages={265--283},
+  year={2016}
+}
+
+@online{chollet2015keras,
+  title={Keras},
+  author={Chollet, Francois and others},
+  year={2015},
+  url={https://github.com/fchollet/keras},
+}
+
+@article{Kober2013,
+    abstract = {Reinforcement learning offers to robotics a framework and set of tools for the design of sophisticated and hard-to-engineer behaviors. Conversely, the challenges of robotic problems provide both inspiration, impact, and validation for developments in reinforcement learning. The relationship between disciplines has sufficient promise to be likened to that between physics and mathematics. In this article, we attempt to strengthen the links between the two research communities by providing a survey of work in reinforcement learning for behavior generation in robots. We highlight both key challenges in robot reinforcement learning as well as notable successes. We discuss how contributions tamed the complexity of the domain and study the role of algorithms, representations, and prior knowledge in achieving these successes. As a result, a particular focus of our paper lies on the choice between model-based and model-free as well as between value-function-based and policy-search methods. By analyzing a simple problem in some detail we demonstrate how reinforcement learning approaches may be profitably applied, and we note throughout open questions and the tremendous potential for future research. {\textcopyright} The Author(s) 2013.},
+    author = {Kober, Jens and Bagnell, J. Andrew and Peters, Jan},
+    doi = {10.1177/0278364913495721},
+    issn = {02783649},
+    journal = {International Journal of Robotics Research},
+    keywords = {Reinforcement learning,learning control,robot,survey},
+    mendeley-groups = {A Thesis Definition},
+    number = {11},
+    pages = {1238--1274},
+    title = {{Reinforcement learning in robotics: A survey}},
+    volume = {32},
+    year = {2013}
+}
+
+@article{Vecerik2019,
+    abstract = {Insertion is a challenging haptic and visual control problem with significant practical value for manufacturing. Existing approaches in the model-based robotics community can be highly effective when task geometry is known, but are complex and cumbersome to implement, and must be tailored to each individual problem by a qualified engineer. Within the learning community there is a long history of insertion research, but existing approaches are either too sample-inefficient to run on real robots, or assume access to high-level object features, e.g. socket pose. In this paper we show that relatively minor modifications to an off-the-shelf Deep-RL algorithm (DDPG), combined with a small number of human demonstrations, allows the robot to quickly learn to solve these tasks efficiently and robustly. Our approach requires no modeling or simulation, no parameterized search or alignment behaviors, no vision system aside from raw images, and no reward shaping. We evaluate our approach on a narrow-clearance peg-insertion task and a deformable clip-insertion task, both of which include variability in the socket position. Our results show that these tasks can be solved reliably on the real robot in less than 10 minutes of interaction time, and that the resulting policies are robust to variance in the socket position and orientation.},
+    archivePrefix = {arXiv},
+    arxivId = {arXiv:1810.01531v2},
+    author = {Vecerik, Mel and Sushkov, Oleg and Barker, David and Rothorl, Thomas and Hester, Todd and Scholz, Jon},
+    doi = {10.1109/ICRA.2019.8794074},
+    eprint = {arXiv:1810.01531v2},
+    file = {:D$\backslash$:/Hanze/OneDrive - Hanzehogeschool Groningen/Master/14 - Master Thesis/09 Refs/1810.01531.pdf:pdf},
+    isbn = {9781538660263},
+    issn = {10504729},
+    journal = {Proceedings - IEEE International Conference on Robotics and Automation},
+    mendeley-groups = {A Thesis Definition},
+    pages = {754--760},
+    title = {{A practical approach to insertion with variable socket position using deep reinforcement learning}},
+    volume = {2019-May},
+    year = {2019}
+}
+
+@misc{Webots,
+  AUTHOR = {Webots},
+  TITLE  = {http://www.cyberbotics.com},
+  NOTE   = {Commercial Mobile Robot Simulation Software},
+  EDITOR = {Cyberbotics Ltd.},
+  URL    = {http://www.cyberbotics.com}
+}
+
+@inproceedings{coppeliaSim,
+    author={E. Rohmer and S. P. N. Singh and M. Freese},
+    title={CoppeliaSim (formerly V-REP): a Versatile and Scalable Robot Simulation Framework},
+    booktitle={Proc. of The International Conference on Intelligent Robots and Systems (IROS)},
+    year={2013},
+    url={www.coppeliarobotics.com}
+}
+
+@inproceedings{Koenig2004,
+    abstract = {Simulators have played a critical role in robotics research as tools for quick and efficient testing of new concepts, strategies, and algorithms. To date, most simulators have been restricted to 2D worlds, and few have matured to the point where they are both highly capable and easily adaptable. Gazebo is designed to fill this niche by creating a 3D dynamic multi-robot environment capable of recreating the complex worlds that will be encountered by the next generation of mobile robots. Its open source status, fine grained control, and high fidelity place Gazebo in a unique position to become more than just a stepping stone between the drawing board and real hardware: data visualization, simulation of remote environments, and even reverse engineering of black-box systems are all possible applications. Gazebo is developed in cooperation with the Player and Stage projects [1], [2], [3], and is available from http://playerstage.sourceforge.net/gazebo/gazebo.html.},
+    author = {Koenig, Nathan and Howard, Andrew},
+    booktitle = {2004 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
+    doi = {10.1109/iros.2004.1389727},
+    isbn = {0780384636},
+    %mendeley-groups = {A Thesis Definition},
+    pages = {2149--2154},
+    title = {{Design and use paradigms for Gazebo, an open-source multi-robot simulator}},
+    volume = {3},
+    year = {2004}
+}
+
+@article{Ortenzi2020,
+    abstract = {Task-aware robotic grasping is critical if robots are to successfully cooperate with humans. The choice of a grasp is multi-faceted; however, the task to perform primes this choice in terms of hand shaping and placement on the object. This grasping strategy is particularly important for a robot companion, as it can potentially hinder the success of the collaboration with humans. In this work, we investigate how different grasping strategies of a robot passer influence the performance and the perceptions of the interaction of a human receiver. Our findings suggest that a grasping strategy that accounts for the subsequent task of the receiver improves substantially the performance of the human receiver in executing the subsequent task. The time to complete the task is reduced by eliminating the need of a post-handover readjustment of the object. Furthermore, the human perceptions of the interaction improve when a task-oriented grasping strategy is adopted. The influence of the robotic grasp strategy increases as the constraints induced by the object's affordances become more restrictive. The results of this work can benefit the wider robotics community, with application ranging from industrial to household human-robot interaction for cooperative and collaborative object manipulation.},
+    author = {Ortenzi, Valerio and Cini, Francesca and Pardi, Tommaso and Marturi, Naresh and Stolkin, Rustam and Corke, Peter and Controzzi, Marco},
+    doi = {10.3389/frobt.2020.542406},
+    % file = {:C$\backslash$:/Users/natan/AppData/Local/Mendeley Ltd./Mendeley Desktop/Downloaded/Ortenzi et al. - 2020 - The Grasp Strategy of a Robot Passer Influences Performance and Quality of the Robot-Human Object Handover.pdf:pdf},
+    issn = {2296-9144},
+    journal = {Frontiers in Robotics and AI},
+    keywords = {human-robot collaboration (HRC),human-robot interaction (HRI),object handover,seamless interaction,task-oriented grasping},
+    % mendeley-groups = {A Thesis Definition},
+    month = oct,
+    pages = {542406},
+    publisher = {Frontiers Media SA},
+    title = {{The Grasp Strategy of a Robot Passer Influences Performance and Quality of the Robot-Human Object Handover}},
+    url = {https://www.frontiersin.org/article/10.3389/frobt.2020.542406/full},
+    volume = {7},
+    year = {2020}
+}
+
+@article{MITTAL2019,
+    title = "A survey of techniques for optimizing deep learning on GPUs",
+    journal = "Journal of Systems Architecture",
+    volume = "99",
+    pages = "101635",
+    year = "2019",
+    issn = "1383-7621",
+    doi = "https://doi.org/10.1016/j.sysarc.2019.101635",
+    url = "http://www.sciencedirect.com/science/article/pii/S1383762119302656",
+    author = "Sparsh Mittal and Shraiysh Vaishay",
+    keywords = "Review, GPU, Hardware architecture for deep learning, Accelerator, Distributed training, Parameter server, Allreduce, Pruning, Tiling",
+    abstract = "The rise of deep-learning (DL) has been fuelled by the improvements in accelerators. Due to its unique features, the GPU continues to remain the most widely used accelerator for DL applications. In this paper, we present a survey of architecture and system-level techniques for optimizing DL applications on GPUs. We review techniques for both inference and training and for both single GPU and distributed system with multiple GPUs. We bring out the similarities and differences of different works and highlight their key attributes. This survey will be useful for both novice and experts in the field of machine learning, processor architecture and high-performance computing."
+}
+
+@misc{Gomes2012,
+    abstract = {Over the last decades, parallel to technological development, there has been a great increase in the use of visual inspection systems. These systems have been widely implemented, particularly in the stage of inspection of product quality, as a means of replacing manual inspection conducted by humans. Much research has been published proposing the use of such tools in the processes of sorting and classification of food products. This paper presents a review of the main publications in the last ten years with respect to new technologies and to the wide application of systems of visual inspection in the sectors of precision farming and in the food industry. {\textcopyright} 2012 Springer-Verlag Berlin Heidelberg.},
+    author = {Gomes, Juliana Freitas Santos and Leta, Fabiana Rodrigues},
+    booktitle = {European Food Research and Technology},
+    doi = {10.1007/s00217-012-1844-2},
+    issn = {14382377},
+    keywords = {Computational vision,Food,Food industry,Image analysis,Precision farming,Visual inspection},
+    mendeley-groups = {A Thesis Definition},
+    month = dec,
+    number = {6},
+    pages = {989--1000},
+    title = {{Applications of computer vision techniques in the agriculture and food industry: A review}},
+    url = {http://link.springer.com/10.1007/s00217-012-1844-2},
+    volume = {235},
+    year = {2012}
+}
+
+@inproceedings{Arakeri2016,
+    abstract = {Agriculture sector plays a key role in the economic development of India. The task of fruit grading is vital in the agricultural industry because there is a great demand for high quality fruits in the market. However, fruit grading by human is inefficient, labor intensive and prone to error. The automated grading system not only speeds up the time of processing, but also minimizes error. There is a great demand for tomatoes in both local and foreign markets. The tomato fruit is very delicate and hence careful handling of this fruit is required during grading. Thus, this paper proposes an automatic and effective tomato fruit grading system based on computer vision techniques. The proposed quality evaluation method consists of two phases: development of hardware and software. The hardware is developed to capture the image of the tomato and move the fruit to the appropriate bins without manual intervention. The software is developed using image processing techniques to analyze the fruit for defects and ripeness. Experiments were carried out on several images of the tomato fruit. It was observed that the proposed method was successful with 96.47{\%} accuracy in evaluating the quality of the tomato.},
+    author = {Arakeri, Megha P. and Lakshmana},
+    booktitle = {Procedia Computer Science},
+    doi = {10.1016/j.procs.2016.03.055},
+    file = {:C$\backslash$:/Users/natan/AppData/Local/Mendeley Ltd./Mendeley Desktop/Downloaded/Arakeri, Lakshmana - 2016 - Computer Vision Based Fruit Grading System for Quality Evaluation of Tomato in     Agriculture industry.pdf:pdf},
+    issn = {18770509},
+    keywords = {Agriculture,Computer Vision,Defect,Ripeness,Tomato},
+    mendeley-groups = {A Thesis Definition},
+    month = jan,
+    pages = {426--433},
+    publisher = {Elsevier B.V.},
+    title = {{Computer Vision Based Fruit Grading System for Quality Evaluation of Tomato in Agriculture industry}},
+    volume = {79},
+    year = {2016}
+}
+
+@article{Bhutta2020,
+    abstract = {The presence of any type of defect on the glass screen of smart devices has a great impact on their quality. We present a robust semi-supervised learning framework for intelligent micro-scaled localization and classification of defects on a 16K pixel image of smartphone glass. Our model features the efficient recognition and labeling of three types of defects: scratches, light leakage due to cracks, and pits. Our method also differentiates between the defects and light reflections due to dust particles and sensor regions, which are classified as non-defect areas. We use a partially labeled dataset to achieve high robustness and excellent classification of defect and non-defect areas as compared to principal components analysis (PCA), multi-resolution and information-fusion-based algorithms. In addition, we incorporated two classifiers at different stages of our inspection framework for labeling and refining the unlabeled defects. We successfully enhanced the inspection depth-limit up to 5 microns. The experimental results show that our method outperforms manual inspection in testing the quality of glass screen samples by identifying defects on samples that have been marked as good by human inspection.},
+    archivePrefix = {arXiv},
+    arxivId = {2010.00741},
+    author = {Bhutta, M Usman Maqbool and Aslam, Shoaib and Yun, Peng and Jiao, Jianhao and Liu, Ming},
+    eprint = {2010.00741},
+    file = {:C$\backslash$:/Users/natan/AppData/Local/Mendeley Ltd./Mendeley Desktop/Downloaded/Bhutta et al. - 2020 - Smart-Inspect Micro Scale Localization and Classification of Smartphone Glass Defects for Industrial Automation.pdf:pdf},
+    mendeley-groups = {A Thesis Definition},
+    month = oct,
+    title = {{Smart-Inspect: Micro Scale Localization and Classification of Smartphone Glass Defects for Industrial Automation}},
+    url = {http://arxiv.org/abs/2010.00741},
+    year = {2020}
+}
+
+@misc{Paszke2019,
+    abstract = {Deep learning frameworks have often focused on either usability or speed, but not both. PyTorch is a machine learning library that shows that these two goals are in fact compatible: it provides an imperative and Pythonic programming style that supports code as a model, makes debugging easy and is consistent with other popular scientific computing libraries, while remaining efficient and supporting hardware accelerators such as GPUs. In this paper, we detail the principles that drove the implementation of PyTorch and how they are reflected in its architecture. We emphasize that every aspect of PyTorch is a regular Python program under the full control of its user. We also explain how the careful and pragmatic implementation of the key components of its runtime enables them to work together to achieve compelling performance. We demonstrate the efficiency of individual subsystems, as well as the overall speed of PyTorch on several common benchmarks.},
+    archivePrefix = {arXiv},
+    arxivId = {1912.01703},
+    author = {Paszke, Adam and Gross, Sam and Massa, Francisco and Lerer, Adam and Bradbury, James and Chanan, Gregory and Killeen, Trevor and Lin, Zeming and Gimelshein, Natalia and Antiga, Luca and Desmaison, Alban and K{\"{o}}pf, Andreas and Yang, Edward and DeVito, Zach and Raison, Martin and Tejani, Alykhan and Chilamkurthy, Sasank and Steiner, Benoit and Fang, Lu and Bai, Junjie and Chintala, Soumith},
+    booktitle = {arXiv},
+    eprint = {1912.01703},
+    file = {:C$\backslash$:/Users/natan/AppData/Local/Mendeley Ltd./Mendeley Desktop/Downloaded/Paszke et al. - 2019 - PyTorch An Imperative Style, High-Performance Deep Learning Library.pdf:pdf},
+    issn = {23318422},
+    mendeley-groups = {A Master Thesis},
+    title = {{PyTorch: An imperative style, high-performance deep learning library}},
+    year = {2019}
+}
+
+
+@misc{urdhparam2020,
+    mendeley-groups = {A Master Thesis},
+    title = {{Universal Robots - Parameters for calculations of kinematics and dynamics}},
+    url = {https://www.universal-robots.com/articles/ur/parameters-for-calculations-of-kinematics-and-dynamics/},
+    urldate = {2020-12-31}
+}
+
+@techreport{Hawkins2013,
+    author = {Hawkins, Kelsey P},
+    file = {:C$\backslash$:/Users/natan/AppData/Local/Mendeley Ltd./Mendeley Desktop/Downloaded/Hawkins - 2013 - Analytic Inverse Kinematics for the Universal Robots UR-5UR-10 Arms.pdf:pdf},
+    keywords = {Arm,Joints,Kinematics,Robots,Technical Report},
+    mendeley-groups = {A Master Thesis},
+    month = dec,
+    publisher = {Georgia Institute of Technology},
+    title = {{Analytic Inverse Kinematics for the Universal Robots UR-5/UR-10 Arms}},
+    url = {https://smartech.gatech.edu/handle/1853/50782},
+    year = {2013}
+}
+
+@article{Ayala2020,
+    abstract = {Research on humanoid robotic systems involves a considerable amount of computational resources, not only for the involved design but also for its development and subsequent implementation. For robotic systems to be implemented in real-world scenarios, in several situations, it is preferred to develop and test them under controlled environments in order to reduce the risk of errors and unexpected behavior. In this regard, a more accessible and efficient alternative is to implement the environment using robotic simulation tools. This paper presents a quantitative comparison of Gazebo, Webots, and V-REP, three simulators widely used by the research community to develop robotic systems. To compare the performance of these three simulators, elements such as CPU, memory footprint, and disk access are used to measure and compare them to each other. In order to measure the use of resources, each simulator executes 20 times a robotic scenario composed by a NAO robot that must navigate to a goal position avoiding a specific obstacle. In general terms, our results show that Webots is the simulator with the lowest use of resources, followed by V-REP, which has advantages over Gazebo, mainly because of the CPU use.},
+    archivePrefix = {arXiv},
+    arxivId = {2008.04627},
+    author = {Ayala, Angel and Cruz, Francisco and Campos, Diego and Rubio, Rodrigo and Fernandes, Bruno and Dazeley, Richard},
+    eprint = {2008.04627},
+    file = {:Z$\backslash$:/Natanael/RemoteLab/Master Thesis/2008.04627.pdf:pdf},
+    journal = {arXiv},
+    keywords = {Humanoid robot,NAO,Robotic simulator,Simulation tools comparison},
+    mendeley-groups = {A Master Thesis},
+    pages = {1--10},
+    title = {{A Comparison of Humanoid Robot Simulators: A Quantitative Approach}},
+    year = {2020}
+}
+
+@misc{torchvisionmodels,
+    mendeley-groups = {A Master Thesis},
+    title = {{torchvision.models — PyTorch 1.7.0 documentation}},
+    url = {https://pytorch.org/docs/stable/torchvision/models.html},
+    urldate = {2021-01-01}
+}
+
+@misc{OpenCVarucoWebsite,
+    mendeley-groups = {A Master Thesis},
+    title = {{OpenCV: Detection of ArUco Markers}},
+    url = {https://docs.opencv.org/master/d5/dae/tutorial_aruco_detection.html},
+    urldate = {2021-01-02}
+}
+
+@techreport{Huang2018,
+    abstract = {Recent work has shown that convolutional networks can be substantially deeper, more accurate, and efficient to train if they contain shorter connections between layers close to the input and those close to the output. In this paper, we embrace this observation and introduce the Dense Convo-lutional Network (DenseNet), which connects each layer to every other layer in a feed-forward fashion. Whereas traditional convolutional networks with L layers have L connections-one between each layer and its subsequent layer-our network has L(L+1) 2 direct connections. For each layer, the feature-maps of all preceding layers are used as inputs, and its own feature-maps are used as inputs into all subsequent layers. DenseNets have several compelling advantages: they alleviate the vanishing-gradient problem, strengthen feature propagation, encourage feature reuse, and substantially reduce the number of parameters. We evaluate our proposed architecture on four highly competitive object recognition benchmark tasks (CIFAR-10, CIFAR-100, SVHN, and ImageNet). DenseNets obtain significant improvements over the state-of-the-art on most of them, whilst requiring less computation to achieve high performance. Code and pre-trained models are available at https://github.com/liuzhuang13/DenseNet.},
+    archivePrefix = {arXiv},
+    arxivId = {1608.06993v5},
+    author = {Huang, Gao and Liu, Zhuang and {Van Der Maaten}, Laurens and Weinberger, Kilian Q},
+    eprint = {1608.06993v5},
+    file = {:C$\backslash$:/Users/natan/AppData/Local/Mendeley Ltd./Mendeley Desktop/Downloaded/Huang et al. - Unknown - Densely Connected Convolutional Networks.pdf:pdf},
+    mendeley-groups = {A Master Thesis},
+    title = {{Densely Connected Convolutional Networks}},
+    url = {https://github.com/liuzhuang13/DenseNet}
+}
+
+@misc{huberloss,
+    mendeley-groups = {A Master Thesis},
+    title = {{SmoothL1Loss — PyTorch 1.7.0 documentation}},
+    url = {https://pytorch.org/docs/stable/generated/torch.nn.SmoothL1Loss.html},
+    urldate = {2021-01-15}
+}
+
+@inproceedings{Kingma2015,
+    abstract = {We introduce Adam, an algorithm for first-order gradient-based optimization of stochastic objective functions, based on adaptive estimates of lower-order moments. The method is straightforward to implement, is computationally efficient, has little memory requirements, is invariant to diagonal rescaling of the gradients, and is well suited for problems that are large in terms of data and/or parameters. The method is also appropriate for non-stationary objectives and problems with very noisy and/or sparse gradients. The hyper-parameters have intuitive interpretations and typically require little tuning. Some connections to related algorithms, on which Adam was inspired, are discussed. We also analyze the theoretical convergence properties of the algorithm and provide a regret bound on the convergence rate that is comparable to the best known results under the online convex optimization framework. Empirical results demonstrate that Adam works well in practice and compares favorably to other stochastic optimization methods. Finally, we discuss AdaMax, a variant of Adam based on the infinity norm.},
+    archivePrefix = {arXiv},
+    arxivId = {1412.6980},
+    author = {Kingma, Diederik P. and Ba, Jimmy Lei},
+    booktitle = {3rd International Conference on Learning Representations, ICLR 2015 - Conference Track Proceedings},
+    eprint = {1412.6980},
+    file = {:C$\backslash$:/Users/natan/AppData/Local/Mendeley Ltd./Mendeley Desktop/Downloaded/Kingma, Ba - 2015 - Adam A method for stochastic     optimization.pdf:pdf},
+    mendeley-groups = {A Master Thesis},
+    month = dec,
+    publisher = {International Conference on Learning Representations, ICLR},
+    title = {{Adam: A method for stochastic optimization}},
+    url = {https://arxiv.org/abs/1412.6980v9},
+    year = {2015}
+}
+
+@article{Loshchilov2017,
+    archivePrefix = {arXiv},
+    arxivId = {1711.05101},
+    author = {Loshchilov, Ilya and Hutter, Frank},
+    eprint = {1711.05101},
+    file = {:C$\backslash$:/Users/natan/AppData/Local/Mendeley Ltd./Mendeley Desktop/Downloaded/Loshchilov, Hutter - 2017 - Decoupled Weight Decay     Regularization.pdf:pdf},
+    journal = {arXiv},
+    mendeley-groups = {A Master Thesis},
+    month = nov,
+    publisher = {arXiv},
+    title = {{Decoupled Weight Decay Regularization}},
+    url = {http://arxiv.org/abs/1711.05101},
+    year = {2017}
+}
+
+@article{Maslow1943,
+    abstract = {After listing the propositions that must be considered as basic, the author formulates a theory of human motivation in line with these propositions and with the known facts derived from observation and experiment. There are 5 sets of goals (basic needs) which are related to each other and are arranged in a hierarchy of prepotency. When the most prepotent goal is realized, the next higher need emerges. "Thus man is a perpetually wanting animal." Thwarting, actual or imminent, of these basic needs provides a psychological threat that leads to psychopathy. (PsycINFO Database Record (c) 2006 APA, all rights reserved). {\textcopyright} 1943 American Psychological Association.},
+    author = {Maslow, A. H.},
+    doi = {10.1037/h0054346},
+    issn = {0033295X},
+    journal = {Psychological Review},
+    keywords = {ANALYSIS,MOTIVATION,MOTOR AND GLANDULAR RESPONSES (INCL. EMOTION,SLEEP)},
+    mendeley-groups = {A Master Thesis},
+    month = jul,
+    number = {4},
+    pages = {370--396},
+    title = {{A theory of human motivation}},
+    volume = {50},
+    year = {1943}
+}
+
+@article{Rockstrom2009,
+    abstract = {Anthropogenic pressures on the Earth System have reached a scale where abrupt global environmental change can no longer be excluded. We propose a new approach to global sustainability in which we define planetary boundaries within which we expect that humanity can operate safely. Transgressing one or more planetary boundaries may be deleterious or even catastrophic due to the risk of crossing thresholds that will trigger non-linear, abrupt environmental change within continental- to planetary-scale systems. We have identified nine planetary boundaries and, drawing upon current scientific understanding, we propose quantifications for seven of them. These seven are climate change (CO2 concentration in the atmosphere {\textless}350 ppm and/or a maximum change of +1 W m-2 in radiative forcing); ocean acidification (mean surface seawater saturation state with respect to aragonite ≥ 80{\%} of pre-industrial levels); stratospheric ozone ({\textless}5{\%} reduction in O3 concentration from pre-industrial level of 290 Dobson Units); biogeochemical nitrogen (N) cycle (limit industrial and agricultural fixation of N2 to 35 Tg N yr-1) and phosphorus (P) cycle (annual P inflow to oceans not to exceed 10 times the natural background weathering of P); global freshwater use ({\textless}4000 km3 yr-1 of consumptive use of runoff resources); land system change ({\textless}15{\%} of the ice-free land surface under cropland); and the rate at which biological diversity is lost (annual rate of {\textless}10 extinctions per million species). The two additional planetary boundaries for which we have not yet been able to determine a boundary level are chemical pollution and atmospheric aerosol loading. We estimate that humanity has already transgressed three planetary boundaries: for climate change, rate of biodiversity loss, and changes to the global nitrogen cycle. Planetary boundaries are interdependent, because transgressing one may both shift the position of other boundaries or cause them to be transgressed. The social impacts of transgressing boundaries will be a function of the social-ecological resilience of the affected societies. Our proposed boundaries are rough, first estimates only, surrounded by large uncertainties and knowledge gaps. Filling these gaps will require major advancements in Earth System and resilience science. The proposed concept of "planetary boundaries" lays the groundwork for shifting our approach to governance and management, away from the essentially sectoral analyses of limits to growth aimed at minimizing negative externalities, toward the estimation of the safe space for human development. Planetary boundaries define, as it were, the boundaries of the "planetary playing field" for humanity if we want to be sure of avoiding major human-induced environmental change on a global scale. {\textcopyright} 2009 by the author(s).},
+    author = {Rockstr{\"{o}}m, Johan and Steffen, Will and Noone, Kevin and Persson, {\AA}sa and Chapin, F. Stuart and Lambin, Eric and Lenton, Timothy M and Scheffer, Marten and Folke, Carl and Schellnhuber, Hans Joachim and Nykvist, Bj{\"{o}}rn and de Wit, Cynthia A. and Hughes, Terry and van der Leeuw, Sander and Rodhe, Henning and S{\"{o}}rlin, Sverker and Snyder, Peter K and Costanza, Robert and Svedin, Uno and Falkenmark, Malin and Karlberg, Louise and Corell, Robert W and Fabry, Victoria J and Hansen, James and Walker, Brian and Liverman, Diana and Richardson, Katherine and Crutzen, Paul and Foley, Jonathan},
+    doi = {10.5751/ES-03180-140232},
+    file = {:C$\backslash$:/Users/natan/AppData/Local/Mendeley Ltd./Mendeley Desktop/Downloaded/Rockstr{\"{o}}m et al. - 2009 - Planetary Boundaries     Exploring the Safe Operating Space for Humanity.pdf:pdf},
+    issn = {17083087},
+    journal = {Ecology and Society},
+    keywords = {Atmospheric aerosol loading,Biogeochemical nitrogen cycle,Biological diversity,Chemical pollution,Climate change,Earth,Global freshwater    use,Land system change,Ocean acidification,Phosphorus cycle,Planetary boundaries,Stratospheric ozone,Sustainability},
+    number = {2},
+    title = {{Planetary boundaries: Exploring the safe operating space for humanity}},
+    volume = {14},
+    year = {2009}
+}
+
+@inproceedings{ROS2009,
+    author = {Quigley, Morgan and Conley, Ken and Gerkey, Brian and Faust, Josh and Foote, Tully and Leibs, Jeremy and Wheeler, Rob and Ng, Andrew},
+    year = {2009},
+    month = {01},
+    title = {ROS: an open-source Robot Operating System},
+    volume = {3},
+    journal = {ICRA Workshop on Open Source Software}
+}
+
+@misc{ROSwiki,
+    abstract = {ROS (Robot Operating System) provides libraries and tools to help software developers create robot applications. It provides hardware abstraction, device drivers, libraries, visualizers, message-passing, package management, and more. ROS is licensed under an open source, BSD license.},
+    author = {ROS},
+    booktitle = {Online},
+    mendeley-groups = {A Master Thesis},
+    title = {{Documentation - ROS Wiki}},
+    url = {http://wiki.ros.org/},
+    urldate = {2021-01-17},
+    year = {2013}
+}
+
+@misc{ROSAnswers,
+    keywords = {ROS,community,forum},
+    mendeley-groups = {A Master Thesis},
+    title = {{ROS Answers: Open Source Q\&A Forum}},
+    url = {https://answers.ros.org},
+    urldate = {2021-01-17}
+}
+
+@misc{Pytorchmodels2019,
+    title={torchvision.models},
+    url={https://pytorch.org/docs/stable/torchvision/models.html},
+    journal={torchvision.models - PyTorch 1.7.0 documentation},
+    year={2019},
+    urldate = {2021-01-17}
+}
+
+@online{URsingularity,
+   title = {Universal Robots - What is a singularity?},
+   url = {https://www.universal-robots.com/articles/ur/what-is-a-singularity/},
+   year = {2018}
+}
+
+@manual{Robotic2018,
+    organization = {Robotic},
+    title = {Manual Robotiq 2F-85 \& 2F-140 for e-Series Universal Robots},
+    pagetotal = {145},
+    pubstate = {November 07, 2018},
+}
+
+@article{DeBruin2018,
+    abstract = {Experience replay is a technique that allows off-policy reinforcement-learning methods to reuse past experiences. The stability and speed of convergence of reinforcement learning, as well as the eventual performance of the learned policy, are strongly dependent on the experiences being replayed. Which experiences are replayed depends on two important choices. The first is which and how many experiences to retain in the experience replay buffer. The second choice is how to sample the experiences that are to be replayed from that buffer. We propose new methods for the combined problem of experience retention and experience sampling. We refer to the combination as experience selection. We focus our investigation specifically on the control of physical systems, such as robots, where exploration is costly. To determine which experiences to keep and which to replay, we investigate different proxies for their immediate and long-term utility. These proxies include age, temporal difference error and the strength of the applied exploration noise. Since no currently available method works in all situations, we propose guidelines for using prior knowledge about the characteristics of the control problem at hand to choose the appropriate experience replay strategy.},
+    author = {{De Bruin}, Tim and Kober, Jens and Tuyls, Karl and Babu{\v{s}}ka, Robert},
+    doi = {10.5555/3291125.3291134},
+    file = {:C$\backslash$:/Users/natan/AppData/Local/Mendeley Ltd./Mendeley Desktop/Downloaded/De Bruin et al. - 2018 - Experience Selection in Deep Reinforcement Learning for Control.pdf:pdf},
+    issn = {15337928},
+    journal = {Journal of Machine Learning Research},
+    keywords = {Control,Deep learning,Experience replay,Reinforcement learning,Robotics},
+    mendeley-groups = {A Master Thesis},
+    pages = {1--56},
+    title = {{Experience selection in deep reinforcement learning for control}},
+    url = {http://jmlr.org/papers/v19/17-131.html.},
+    volume = {19},
+    year = {2018}
+}
+
+@inproceedings{Brys2015,
+    abstract = {Reinforcement learning describes how a learning agent can achieve optimal behaviour based on interactions with its environment and reward feedback. A limiting factor in reinforcement learning as employed in artificial intelligence is the need for an often prohibitively large number of environment samples before the agent reaches a desirable level of performance. Learning from demonstration is an approach that provides the agent with demonstrations by a supposed expert, from which it should derive suitable behaviour. Yet, one of the challenges of learning from demonstration is that no guarantees can be provided for the quality of the demonstrations, and thus the learned behavior. In this paper, we investigate the intersection of these two approaches, leveraging the theoretical guarantees provided by reinforcement learning, and using expert demonstrations to speed up this learning by biasing exploration through a process called reward shaping. This approach allows us to leverage human input without making an erroneous assumption regarding demonstration optimality. We show experimentally that this approach requires significantly fewer demonstrations, is more robust against suboptimality of demonstrations, and achieves much faster learning than the recently developed HAT algorithm.},
+    author = {Brys, Tim and Harutyunyan, Anna and Suay, Halit Bener and Chernova, Sonia and Taylor, Matthew E and Now{\'{e}}, Ann},
+    booktitle = {IJCAI International Joint Conference on Artificial Intelligence},
+    file = {:C$\backslash$:/Users/natan/AppData/Local/Mendeley Ltd./Mendeley Desktop/Downloaded/Brys et al. - Unknown - Reinforcement Learning from Demonstration through Shaping.pdf:pdf},
+    isbn = {9781577357384},
+    issn = {10450823},
+    mendeley-groups = {A Master Thesis},
+    pages = {3352--3358},
+    title = {{Reinforcement learning from demonstration through shaping}},
+    volume = {2015-Janua},
+    year = {2015}
+}
+
+@misc{github_urcap,
+    author = {Gomes, Natanael Magno},
+    title = {{natanaelmgomes/robotiq\_2f\_urcap: ROS package to control a Robotiq 2F-85 (140) gripper through URcap.}},
+    url = {https://github.com/natanaelmgomes/robotiq_2f_urcap},
+    urldate = {2021-01-22}
+}
+
+@misc{github_drl,
+   author = {Gomes, Natanael Magno},
+   title = {natanaelmgomes/drl\_ros: ROS package with Webots simulation environment, layer of control and a Deep Reinforcement Learning algorithm using Convolutional Neural Network.},
+   url = {https://github.com/natanaelmgomes/drl_ros},
+   urldate = {2021-01-22}
+}
+
+
+
+
+

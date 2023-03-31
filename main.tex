@@ -1,0 +1,86 @@
+% Welcome to the unofficial template of the master study Smart Systems Engineering at Hanze University of Applied Sciences. Original template created by Natanael Magno Gomes and The Polytechnic Institute of Bragança (IPB).
+% Adapted to Hanze's expectations by dr. Felipe Nascimento Martins and subsequently by Ewout Bergsma.
+% All information of the "05_Final_report_format_20_21.docx" document is included in this template.
+% Last update: 12/12/2021
+% Feel free to contact me: ewoutbergsma [at] hotmail.com
+
+\documentclass[12pt,a4paper,twoside]{ipb}
+\errorcontextlines=3
+\usepackage{csquotes}
+\usepackage{amssymb}
+\usepackage[portuguese,USenglish]{babel}
+\graphicspath{{./images/}}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{realboxes}
+\usepackage{url}
+\usepackage[colorlinks=true, urlcolor=black, linkcolor=black, citecolor=black, bookmarks=true, pdfstartview=FitH]{hyperref}
+
+\usepackage[style=ieee,backend=biber]{biblatex}
+\addbibresource{references.bib}
+\usepackage{lipsum}
+\usepackage{tabulary}
+\usepackage{graphicx}
+\usepackage{subfig}
+\usepackage{float}  % Positioning of the figures
+\usepackage[binary-units=true]{siunitx}
+\usepackage[section]{placeins}
+\usepackage{indentfirst}  % Indents all paragraphs
+\usepackage{mathtools}  % Allows adding multi line equations
+\emergencystretch=1em  % Fix overfull
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}  % Centre col with width
+\usepackage{enumitem}
+\setlist{nosep}  % By default the separation is large
+\renewcommand{\glsgroupskip}{}
+
+
+\usepackage{fancyref}  % This allows to use \fref{} command. This is very useful, it allows to easily refer to any \label{}. % See documentation: https://mirror.las.iastate.edu/tex-archive/macros/latex/contrib/fancyref/fancyref.pdf.
+
+
+\title{Unofficial template Master SSE Thesis}  % Title of your thesis
+\author{Studentname Middlename Lastname}  % Student name
+\supervisor{Name First Supervisor}
+% \cosupervisor{Name co-supervisor (Uncomment this line if there is no co-supervisor)}
+\courseyear{2021}
+\makeglossaries
+\loadglsentries{chapters/acronyms}
+
+
+\begin{document}
+\beforepreface  % Places the cover page
+
+\clearpage
+% Navigate to: chapters/abstract.tex
+\input{chapters/abstract}
+
+\clearpage
+% Navigate to: chapters/declaration.tex
+\input{chapters/declaration}
+
+\clearpage
+% Navigate to: chapters/acknowledgements.tex
+\input{chapters/acknowledgements}  
+
+
+\cleardoublepage  % Makes sure contents start on correct page
+\afterpreface  % Places contents, list of tables and list of figures
+\bodystart  % This sets stylistic parameters for the following content
+
+% Here starts the actual content of your thesis
+\input{chapters/rationale}
+\input{chapters/situational_theoretical_analysis}
+\input{chapters/conceptual_model}
+\input{chapters/research_design}
+\input{chapters/research_results}
+\input{chapters/conclusion_recommendations}
+\input{chapters/additional_chapters}
+
+\printglossary[type=\acronymtype,title={Definitions and Abbreviations}]
+
+\clearpage
+\addcontentsline{toc}{chapter}{References}
+\printbibliography[title={References}]
+
+\input{chapters/appendix} % Note, appendix must be last
+
+\end{document}

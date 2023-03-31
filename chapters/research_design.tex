@@ -1,0 +1,64 @@
+\chapter{Research design}\label{chap:research}
+
+The Research Design chapter contains everything that you have done in order to answer your research question. Write and state things in such a way that somebody can repeat your research and arrive at the exact same results. You can use the chapter in your master thesis definition as a start, but generally, research designs end up differently from what you intended to do in the first place. A special remark: it should be written in the PAST TENSE, since you now have already done it.
+
+
+Note, the following content are some examples of techniques that one can use. Read the comments for explanations.
+
+
+\section{Methodology}
+
+A list of requirements has been defined to guide the project, a general and detailed design were developed and implemented to support the investigation of the research question.
+
+\subsection{Requirements}
+
+% One can replace \begin{enumerate} and \end{enumerate} with \begin{itemize} and \end{itemize} respectively for bullets instead of numbers.
+\vspace{2mm}
+\begin{enumerate}
+  \item The Cobot safety features are enabled at all times.
+  \item The system architecture is ROS based.
+  \item The system works in simulation and real environment.
+  \item The training is done using RL techniques.
+  \item The algorithm is trained using self experience and memory replay.
+  \item The algorithm uses RGBD images to estimate the actions.
+\end{enumerate}
+\vspace{3mm} 
+
+\section{General Design}
+
+General design text. See \fref{tab:models}.  % Note how \fref{} allows to refer to a label.
+
+\section{Detailed Design}
+
+Detailed design text. You don't have to follow this structure. Feel free to include, remove or change the titles of the sections.
+
+An example of a table is shown in \fref{tab:models}. Moreover, an example of a figure is shown in \fref{fig:example_figure}. Always use the proper reference to cite tables and figures. Do not mention "table below" or "figure above", for example.
+
+\begin{table}
+    \centering
+        \begin{tabular}{ p{35mm}  P{3cm}   P{40mm}  P{3cm}}
+            \hline
+            Model name & Feature space & Est. total size (MB) & Top-5 error \\
+            \hline
+            AlexNet          &   256  x 6 x  6     &  242.03  &    20.91 \\
+            SqueezeNet       &   512  x 13 x 13   &   76.54   &    19.58 \\
+            Densenet         &   1024 x 7 x  7    &   325.21  &    7.83  \\
+            GoogleNet        &   1024 x 7 x  7    &   85.91   &    10.47 \\
+            MobileNet        &   1280 x 7 x  7    &   162.45  &    9.71  \\
+            ResNeXt-50-32x4d &   2048 x 7 x  7    &   415.72  &    6.30  \\
+            MNASNet          &   1280 x 7 x  7    &   135.77  &    8.4  \\
+            \hline
+        \end{tabular}
+    \caption{This is the caption of the example table \cite{torchvisionmodels}.}
+    \label{tab:models}
+\end{table}
+
+
+\begin{figure}[b]  % b for bottom of page
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/hanzelogo_nl.png}
+    \caption{This is the caption of the example figure.}
+    \label{fig:example_figure}
+\end{figure}
+
+
