@@ -3,5 +3,6 @@
     "files.trimTrailingWhitespace": true,
     "files.insertFinalNewline": true,
     "files.trimFinalNewlines": true,
-    "editor.formatOnSave": true,
+    "explorer.openEditors.visible": 0,
+    "workbench.statusBar.visible": true,
 }
