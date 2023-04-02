@@ -131,6 +131,23 @@ A solution is viable only if all constraints are satisfied without penalties. To
 \subsection{Step 4: End}\label{sec:monte_carlo_method_step_4}
 The MCM converges on an optimal solution that satisfies necessary constraints, providing outputs such as device types, transmission power, and location. It also offers information on constraint violations, including the penalty, network power consumption, and RSSI sensitivity violations—these outputs aid in understanding the optimization process and refining the network design.
 
+\begin{algorithm}
+    \caption{Monte Carlo Method pseudocode for network optimization.}
+    \label{alg:mcm}
+    \begin{algorithmic}
+    \STATE Initialize MCM parameters: total\_device, device\_types, $d$, $F_c$, $D_0$, $n$, $\sigma$, $G_t$, $G_r$
+    \WHILE{network}
+        \STATE devices, txpower, position $\gets$ generate\_random\_numbers(total\_device)
+        \STATE penalty, path\_loss, rssi\_uplink, rssi\_downlink $\gets$ mathematical\_constraints\_evaluation(total\_device, device\_types, distance, $F_c$, $D_0$, $n$, $\sigma$, $G_t$, $G_r$)
+        \IF{penalty is False}
+            \STATE network $\gets$ False
+        \ENDIF
+        \RETURN devices, txpower, penalty, path\_loss, rssi\_uplink, rssi\_downlink
+    \ENDWHILE
+    \end{algorithmic}
+\end{algorithm}
+
+It is a simplified version of the Monte Carlo Method implementation and does not cover all the details of the original code. It is focused on the primary structure and steps of the method for Network Optimization and initial network build-up transmission power.
 
 \section{Genetic Algorithm for Transmission Power Optimization}\label{sec:genetic_algorithm}
 GA optimizes the Thread network's transmission power to reduce energy consumption while maintaining wireless communication quality. MCM-generated configuration is the starting point for GA.
@@ -159,18 +176,27 @@ Key steps and parameters for GA:
 
 In this table, the "Population" row represents the output from the Monte Carlo simulation, which is a list of transmission power, device types, and device positions.
 
-The GA process includes the following steps:
-
-\vspace{2mm}
-\begin{enumerate}
-    \item \textbf{}{Initialization:} Generate the initial population using MCM output.
-    \item \textbf{}{Selection:} Choose best individuals based on fitness using the "sorted" method.
-    \item \textbf{}{Crossover:} Produce offspring by crossing over selected individuals' genes.
-    \item \textbf{}{Mutation:} Introduce random changes to transmission power using the "swap" method.
-    \item \textbf{}{Evaluation:} Calculate fitness by assessing transmission power and RSSI penalty.
-    \item \textbf{}{Termination:} Iterate until reaching the maximum number of iterations.
-\end{enumerate}
-\vspace{3mm}
+\begin{algorithm}[H]
+\caption{Genetic Algorithm pseudocode for transmission power optimization.}
+\label{alg:genetic_algorithm}
+\begin{algorithmic}[1]
+\STATE Initialize GA parameters: population\_size, population, max\_iterations, mutation\_prob, selection\_method
+\STATE Initialize population: create\_random\_population(population\_size)
+\FOR{each candidate in population}
+    \STATE fitness = evaluate\_fitness(candidate)
+\ENDFOR
+\FOR{generation in range(max\_iterations)}
+    \STATE parents = select\_parents(population, selection\_method)
+    \STATE offspring = crossover(parents, crossover\_prob)
+    \STATE offspring = mutate(offspring, mutation\_prob)
+    \FOR{each candidate in offspring}
+        \STATE fitness = evaluate\_fitness(candidate)
+    \ENDFOR
+    \STATE population = replace\_population(population, offspring)
+\ENDFOR
+\STATE best\_solution = find\_best\_solution(population)
+\end{algorithmic}
+\end{algorithm}
 
 The output is a list of optimized transmission power values for each device, along with device types, positions, and penalty values. The solution minimizes transmission power while meeting connectivity constraints.
 
@@ -180,7 +206,7 @@ This section details the steps taken to build the prototype that applied the out
 
 An image is provided below to illustrate the Thread network topology that we have constructed.
 
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{images/research_design/prototype_topology.png}
     \caption{Thread network prototye topology.}
@@ -207,7 +233,7 @@ To construct the prototype, we followed these steps:
 
 Following these steps, we successfully constructed the prototype to apply the optimized settings obtained from the Monte Carlo simulation and the Genetic Algorithm. The following figure presents a real-world Thread network prototype setup. The image provides a clear view of the nRF52840-based Thread nodes, Raspberry Pi as the Edge device, and the Border Router setup with the Dongle. It also showcases the Development Kits used for Routers and REEDs.
 
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.6\textwidth]{images/research_design/prototype_setup.jpg}
     \caption{Thread network prototype setup in the lab.}
@@ -303,13 +329,13 @@ For Routers and REEDs, we used the nRF PPK2 in Source Meter mode to measure the 
     \centering
     \begin{minipage}[t]{0.45\textwidth}
         \centering
-        \includegraphics[width=0.7\linewidth]{images/research_design/PPK2_Router.jpg}
+        \includegraphics[width=1\linewidth]{images/research_design/PPK2_Router.jpg}
         \captionof{figure}{PPK2 connected to a Router.}
         \label{fig:router_source_meter}
     \end{minipage}\hfill
     \begin{minipage}[t]{0.45\textwidth}
         \centering
-        \includegraphics[width=0.7\linewidth]{images/research_design/PPK2_SDK.jpg}
+        \includegraphics[width=1\linewidth]{images/research_design/PPK2_SDK.jpg}
         \captionof{figure}{PPK2 Software in Source Meter mode.}
         \label{fig:ppk2_source_meter}
     \end{minipage}
@@ -324,13 +350,13 @@ Since the USB connection cannot be used with Source Meter mode, and the Border R
     \centering
     \begin{minipage}[t]{0.45\textwidth}
         \centering
-        \includegraphics[width=0.7\linewidth]{images/research_design/PPK2_Border_Router.jpg}
+        \includegraphics[width=1\linewidth]{images/research_design/PPK2_Border_Router.jpg}
         \captionof{figure}{PPK2 connected to a Border Router.}
         \label{fig:border_router_ampere_meter}
     \end{minipage}\hfill
     \begin{minipage}[t]{0.45\textwidth}
         \centering
-        \includegraphics[width=0.7\linewidth]{images/research_design/PPK2_SDK_Ampere.jpg}
+        \includegraphics[width=1\linewidth]{images/research_design/PPK2_SDK_Ampere.jpg}
         \captionof{figure}{PPK2 Software in Ampere Meter mode.}
         \label{fig:ppk2_ampere_meter}
     \end{minipage}
