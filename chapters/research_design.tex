@@ -83,15 +83,21 @@ These parameters are outlined in the table below:
   row{1} = {font=\bfseries},
 }
   Parameter & Description \\
-  Distance & The distance between the devices \\
-  Number of Devices & The total number of devices ($8$ for this research) \\
+  Number of Devices & The total number of devices (8 for this research) \\
   Device Types & The type of each device (Unallocated, SEED, REED, Router, Leader, and Border Router) \\
-  Device Positions & The position of each device, randomly generated from $1$ to $8$ \\
-  Transmission Power & The transmission power of each device, randomly generated between $-20dBm$ to $8dBm$ with $4$ steps difference \\
+  Device Positions & The position of each device, randomly generated from 1 to 8 \\
+  Transmission Power & The transmission power of each device, randomly generated between -20 $dBm$ to 8 $dBm$ with 4 steps difference \\
+  $F_c$ & Carrier frequency for RSSI calculation using genral path loss model - 2.4 $GHz$ \\
+  $D_0$ & Reference distance followed by $F_c$ - 0.25 $m$ \\
+  $d$ & Distance between two devices (Figure \ref{fig:distance_matrix_lab} and \ref{fig:distance_matrix_home}) \\
+  $n$ & Path loss exponent - 5.0 \\
+  $\sigma$ & Variance of the shadowing component - 3.0 $dB$ \\
+  $G_t$ & Transmit antenna gain - 0.0 $dB$ \\
+  $G_r$ & Receive antenna gain - 0.0 $dB$ \\
 \end{longtblr}
 
 \subsection{Step 2: Generate Random Numbers}\label{sec:monte_carlo_method_step_2}
-Based on the factors mentioned at the start, MCM generates a vector X of length equal to 2n, where n is the number of places where network elements can be allocated. Network elements include all device types and sensors.
+Based on the factors mentioned at the start, MCM generates a vector X of length equal to $2n$, where $n$ is the number of places where network elements can be allocated. Network elements include all device types and sensors.
 
 The vector is represented as:
 
@@ -141,14 +147,14 @@ Key steps and parameters for GA:
   row{1} = {font=\bfseries},
 }
   Parameter & Description \\
-  Population Size & The number of individuals in the population \\
+  Population Size & The number of individuals in the population - (100) \\
   Population & The initial population consisting of transmission power, device types, and device positions \\
-  Max Iteration & The maximum number of iterations \\
-  Maximum Transmission Power & The minimum transmission power (dBm) \\
-  Minimum Transmission Power & The maximum transmission power (dBm) \\
-  Mutation Rate & The probability of mutation \\
-  Selection Method & The method used for selecting individuals \\
-  Mutation Method & The method used for mutating individuals \\
+  Max Iteration & The maximum number of iterations - (100) \\
+  Maximum Transmission Power & The minimum transmission power - -20 $(dBm)$ \\
+  Minimum Transmission Power & The maximum transmission power - 8 $(dBm)$ \\
+  Mutation Rate & The probability of mutation - 0.1 \\
+  Selection Method & The method used for selecting individuals - Tournament \\
+  Mutation Method & The method used for mutating individuals - Random \\
 \end{longtblr}
 
 In this table, the "Population" row represents the output from the Monte Carlo simulation, which is a list of transmission power, device types, and device positions.
@@ -266,28 +272,6 @@ The data collection process utilized various modes, time periods, and data types
 Data was collected using the nRF Power Profiler Kit II at $100,000$ samples per second. More extended time periods or higher ping rates would have resulted in excessive data, complicating the analysis process.
 
 A table illustrating the data collection process is provided.
-
-
-% \begin{table}[htbp]
-%   \centering
-%   \begin{tblr}{
-%     colspec={|X[1]|X[1]|X[1]|X[1]|X[1]|X[1]|},
-%     hlines, vlines,
-%     row{1} = {font=\bfseries},
-%   }
-%   Location & Mode & Time Period & Data Type & Ping Frequency & Input Voltage \\
-%   \SetCell[r=4]{l} Lab & \SetCell[r=2]{l} Maximum & \SetCell[r=4]{l} $60 seconds$ & No Sensor & $0$& \SetCell[r=8]{l} $3.588V$ \\
-%   & & & ICMP Ping & $50$ & \\
-%   & \SetCell[r=2]{l} Optimized & & No Sensor & $0$ & \\
-%   & & & Ping & $50$ & \\
-%   \SetCell[r=4]{l} Home & \SetCell[r=2]{l} Maximum & \SetCell[r=4]{l} $300 seconds$ & No Sensor & $0$ & \\
-%   & & & ICMP Ping & 290 & \\
-%   & \SetCell[r=2]{l} Optimized & & No Sensor & $0$ & \\
-%   & & & ICMP Ping & $290$ & \\
-%   \end{tblr}
-%     \caption{Data collection methodology.}
-%     \label{tab:data_collection_methodology}
-% \end{table}
 
 \begin{longtblr}[
   caption = {Data collection methodology.},
