@@ -1,8 +1,8 @@
 {
-    "editor.minimap.enabled": false,
-    "files.trimTrailingWhitespace": true,
-    "files.insertFinalNewline": true,
-    "files.trimFinalNewlines": true,
-    "explorer.openEditors.visible": 0,
-    "workbench.statusBar.visible": true,
+  "editor.minimap.enabled": false,
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "explorer.openEditors.visible": 0,
+  "workbench.statusBar.visible": true,
 }
