@@ -1,12 +1,12 @@
 \chapter{Research Results}\label{chap:research_results}
 
-\section{Monte Carlo Method Analysis}
+\section{\texorpdfstring{\acrlong{MCM}}{MCM} Analysis}
 
-The Monte Carlo Method (MCM) analysis focuses on the output derived from two distinct locations: the Lab and Home. Due to the differences in size between these locations, the distances between devices as input parameter vary, as illustrated in figures \ref{fig:distance_matrix_lab} and \ref{fig:distance_matrix_home}. In the following tables, only the last 5 iterations of the MCM output are presented, as space limitations in this research paper prevent the inclusion of all iterations, which can number in the thousands. For a comprehensive list of the data table, refer to the appendix. The full list of parameters used for the MCM analysis can be found in table \ref{tab:monte_carlo_parameters}.
+The \gls{MCM} analysis focuses on the output derived from two distinct locations: the Lab and Home. Due to the differences in size between these locations, the distances between devices as input parameter vary, as illustrated in figures \ref{fig:distance_matrix_lab} and \ref{fig:distance_matrix_home}. In the following tables, only the last 5 iterations of the \gls{MCM} output are presented, as space limitations in this research paper prevent the inclusion of all iterations, which can number in the thousands. For a comprehensive list of the data table, refer to the appendix. The full list of parameters used for the \gls{MCM} analysis can be found in table \ref{tab:monte_carlo_parameters}.
 
 \begin{longtable}{>{\hspace{0pt}}m{0.313\linewidth}>{\hspace{0pt}}m{0.475\linewidth}>{\hspace{0pt}}m{0.135\linewidth}}
   \label{tab:monte_carlo_results_lab}\\
-  \caption{Monte Carlo Method output from lab.}\\
+  \caption{\gls{MCM} output from lab.}\\
   \hline\hline
   Device                 & $P_{tx} (dBm)$                    & Penalty  \endfirsthead
   \hline
@@ -20,7 +20,7 @@ The Monte Carlo Method (MCM) analysis focuses on the output derived from two dis
 
 \begin{longtable}{>{\hspace{0pt}}m{0.31\linewidth}>{\hspace{0pt}}m{0.481\linewidth}>{\hspace{0pt}}m{0.133\linewidth}}
   \label{tab:monte_carlo_results_home}\\
-  \caption{Monte Carlo Method output from home.}\\
+  \caption{\gls{MCM} output from home.}\\
   \hline\hline
   Device                 & $P_{tx} (dBm)$                     & Penalty  \endfirsthead
   \hline
@@ -32,20 +32,20 @@ The Monte Carlo Method (MCM) analysis focuses on the output derived from two dis
   \hline\hline
 \end{longtable}
 
-The last row in each table indicates a penalty value of 0, which satisfies the mathematical constraints. When a constraint violation occurs, a penalty value of 1000 is added to the Penalty column. An optimal network configuration, which comprises different device types and initial transmission power, is represented by the absence of a penalty. Table \ref{tab:monte_carlo_results_lab} shows the MCM output from the lab location, where the final row demonstrates an optimal network configuration, with a penalty value of zero. Similarly, table \ref{tab:monte_carlo_results_home} presents the MCM output from the home location, with the last row indicating an optimal configuration, also featuring a penalty value of 0.
+The last row in each table indicates a penalty value of 0, which satisfies the mathematical constraints. When a constraint violation occurs, a penalty value of 1000 is added to the penalty column. An optimal network configuration, which comprises different device types and initial transmission power, is represented by the absence of a penalty. Table \ref{tab:monte_carlo_results_lab} shows the \gls{MCM} output from the lab location, where the final row demonstrates an optimal network configuration, with a penalty value of zero. Similarly, table \ref{tab:monte_carlo_results_home} presents the \gls{MCM} output from the home location, with the last row indicating an optimal configuration, also featuring a penalty value of 0.
 
-Examining the rows with penalties in both tables, we can take the first row as an example. In this row, the penalty value is 3000, indicating three violations. According to the mathematical constraints, a leader router must be present in the network, represented by the number 4 in the device column. The absence of a leader router results in the first violation, adding 1000 to the penalty. The relevant mathematical constraints and models are detailed in equations \ref{eq:minimize_power}, \ref{eq:mathematical_constraints_end_device}, \ref{eq:mathematical_constraints_router}, and \ref{eq:mathematical_constraints_border_router}.
+Upon analyzing the rows with penalties in both tables, the first row can be considered as an example. In this row, the penalty value is 3000, which signifies three violations. As per the mathematical constraints, a leader router must be present in the network, denoted by the number 4 in the device column. The lack of a leader router leads to the first violation, contributing 1000 to the penalty. The associated mathematical constraints and models are elaborated in equations \ref{eq:minimize_power}, \ref{eq:mathematical_constraints_end_device}, \ref{eq:mathematical_constraints_router}, and \ref{eq:mathematical_constraints_border_router}.
 
-The next constraint requires the number of routers and leaders to be equal to or greater than 3. However, the network configuration in the first row lacks a leader, leading to another violation. Lastly, a constraint mandates that the number of REEDs must be equal to the combined number of routers and leaders. The absence of a leader router in the network configuration causes the penalty value to reach 3000. The Monte Carlo Method continues iterating until it identifies an optimal network configuration without any constraint violations.
+The next constraint requires the number of routers and leaders to be equal to or greater than 3. However, the network configuration in the first row lacks a leader, leading to another violation. Lastly, a constraint mandates that the number of \glspl{REED} must be equal to the combined number of routers and leaders. The absence of a leader router in the network configuration causes the penalty value to reach 3000. The \gls{MCM} continues iterating until it identifies an optimal network configuration without any constraint violations.
 
 
-\section{Genetic Algorithm Analysis}
+\section{\texorpdfstring{\acrlong{GA}}{GA} Analysis}
 
-Similar to the Monte Carlo Method Analysis, the tables presented below display the output from the Genetic Algorithm for both lab and home locations, with the primary difference between the two scenarios being the distance between devices as input parameters. Unlike the MCM, GA directly provides the final result, showcasing the lowest feasible transmission power without any constraint violations. As GA emphasizes minimizing transmission power, storing all analyzed data from its output is unnecessary, except for the final result. The full list of parameters used in the GA analysis can be found in table \ref{tab:ga_parameters}.
+Similar to the \gls{MCM} analysis, the tables presented below display the output from the \acrlong{GA} for both lab and home locations, with the primary difference between the two scenarios being the distance between devices as input parameters. Unlike the \gls{MCM}, \gls{GA} directly provides the final result, showcasing the lowest feasible transmission power without any constraint violations. As \gls{GA} emphasizes minimizing transmission power, storing all analyzed data from its output is unnecessary, except for the final result. The full list of parameters used in the \gls{GA} analysis can be found in table \ref{tab:ga_parameters}.
 
 \begin{longtable}{>{\hspace{0pt}}m{0.298\linewidth}>{\hspace{0pt}}m{0.54\linewidth}>{\hspace{0pt}}m{0.087\linewidth}}
   \label{tab:ga_results_lab}\\
-  \caption{Genetic Algorithm output from lab.}\\
+  \caption{\gls{GA} output from lab.}\\
   \hline\hline
   Device                 & $P_{tx} (dBm)$                           & Total  \endfirsthead
   \hline
@@ -55,7 +55,7 @@ Similar to the Monte Carlo Method Analysis, the tables presented below display t
 
 \begin{longtable}{>{\hspace{0pt}}m{0.298\linewidth}>{\hspace{0pt}}m{0.54\linewidth}>{\hspace{0pt}}m{0.087\linewidth}}
   \label{tab:ga_results_home}\\
-  \caption{Genetic Algorithm output from home.}\\
+  \caption{\gls{GA} output from home.}\\
   \hline\hline
   Device                 & $P_{tx} (dBm)$                         & Total  \endfirsthead
   \hline
@@ -63,26 +63,26 @@ Similar to the Monte Carlo Method Analysis, the tables presented below display t
   \hline\hline
 \end{longtable}
 
-The Genetic Algorithm output for the lab location, as shown in table \ref{tab:ga_results_lab}, achieved the lowest possible transmission power of -20 $dBm$ for all nodes in the network. This outcome is expected, given the network's short distances within the small lab setting. When devices are in close proximity to each other, there is no need to increase transmission power, as doing so would waste energy. In this scenario, GA successfully minimized transmission power for all nodes. Although it may appear that GA could have set the power even lower, it's important to note that -20 $dBm$ is the lowest limit, and going below that would depend on the mathematical constraints covering path loss and RSSI sensitivity.
+The \acrlong{GA} output for the lab location, as shown in table \ref{tab:ga_results_lab}, achieved the lowest possible transmission power of -20 $dBm$ for all nodes in the network. This outcome is expected, given the network's short distances within the small lab setting. When devices are in close proximity to each other, there is no need to increase transmission power, as doing so would waste energy. In this scenario, \gls{GA} successfully minimized transmission power for all nodes. Although it may appear that \gls{GA} could have set the power even lower, it's important to note that -20 $dBm$ is the lowest limit, and going below that would depend on the mathematical constraints covering path loss and \gls{RSSI} sensitivity.
 
-Conversely, table \ref{tab:ga_results_home} displays the GA output for the home location, where transmission power was not set to the lowest possible value for all nodes due to the larger area. The GA output produced a transmission power range from -16 to -20 $dBm$, which is still an impressive result compared to the maximum transmission power mode. This variation in transmission power reflects the differing distances between devices within the home network.
+Conversely, table \ref{tab:ga_results_home} displays the \gls{GA} output for the home location, where transmission power was not set to the lowest possible value for all nodes due to the larger area. The \gls{GA} output produced a transmission power range from -16 to -20 $dBm$, which is still an impressive result compared to the maximum transmission power mode. This variation in transmission power reflects the differing distances between devices within the home network.
 
-Lastly, the device columns display the same types of devices, which is due to the total number of devices being set to 8, as specified in the parameters table \ref{tab:monte_carlo_parameters}. According to the mathematical constraints, this represents the optimal network configuration derived from the MCM output. If the total number of devices in the network were to be increased, the network configuration would exhibit greater variation.
+Lastly, the device columns display the same types of devices, which is due to the total number of devices being set to 8, as specified in the parameters table \ref{tab:monte_carlo_parameters}. According to the mathematical constraints, this represents the optimal network configuration derived from the \gls{MCM} output. If the total number of devices in the network were to be increased, the network configuration would exhibit greater variation.
 
-In addition to these results, examining the plots for both the lab and home locations provides further insight into the transmission power optimization process based on the number of generations. The X-axis of the plots represents the total number of populations, with 100 max populations being set for this research, as mentioned in the parameters table \ref{tab:ga_parameters}. The maximum number of populations is adjusted depending on the optimization process and requirements. The linear curve observed in the plots is influenced by the parameters used in the GA process, such as distances between devices and the selection method. As these factors change, the transmission process is affected, resulting in different curve patterns in the plots. This demonstrates the flexibility of the GA in adapting to various network configurations and optimization objectives.
+In addition to these results, examining the plots for both the lab and home locations provides further insight into the transmission power optimization process based on the number of generations. The X-axis of the plots represents the total number of populations, with 100 max populations being set for this research, as mentioned in the parameters table \ref{tab:ga_parameters}. The maximum number of populations is adjusted depending on the optimization process and requirements. The linear curve observed in the plots is influenced by the parameters used in the \gls{GA} process, such as distances between devices and the selection method. As these factors change, the transmission process is affected, resulting in different curve patterns in the plots. This demonstrates the flexibility of the \gls{GA} in adapting to various network configurations and optimization objectives.
 
 \begin{figure}[H]
   \centering
   \begin{minipage}[t]{0.5\textwidth}
       \centering
       \includegraphics[width=1\linewidth]{images/research_results/genetic_algorithm_lab_power.png}
-      \captionof{figure}{GA transmission power optimization for lab.}
+      \captionof{figure}{\gls{GA} transmission power optimization for lab.}
       \label{fig:ga_lab_power}
   \end{minipage}\hfill
   \begin{minipage}[t]{0.5\textwidth}
       \centering
       \includegraphics[width=1\linewidth]{images/research_results/genetic_algorithm_home_power.png}
-      \captionof{figure}{GA transmission power optimization for home.}
+      \captionof{figure}{\gls{GA} transmission power optimization for home.}
       \label{fig:ga_home_power}
   \end{minipage}
 \end{figure}
@@ -97,13 +97,13 @@ Understanding the relationship between distance and transmission power in the ne
   \begin{minipage}[t]{0.5\textwidth}
       \centering
       \includegraphics[width=1\linewidth]{images/research_results/distance-vs-transmission-power/mcm/lab-distance-vs-txpower.png}
-      \captionof{figure}{Transmission power vs. distance for lab location using MCM.}
+      \captionof{figure}{Transmission power vs. distance for lab location using \gls{MCM}.}
       \label{fig:lab_distance_vs_txpower_mcm}
   \end{minipage}\hfill
   \begin{minipage}[t]{0.5\textwidth}
       \centering
       \includegraphics[width=1\linewidth]{images/research_results/distance-vs-transmission-power/mcm/home-distance-vs-txpower.png}
-      \captionof{figure}{Transmission power vs. distance for home location using MCM.}
+      \captionof{figure}{Transmission power vs. distance for home location using \gls{MCM}.}
       \label{fig:home_distance_vs_txpower_mcm}
   \end{minipage}
 \end{figure}
@@ -113,13 +113,13 @@ Understanding the relationship between distance and transmission power in the ne
   \begin{minipage}[t]{0.5\textwidth}
       \centering
       \includegraphics[width=1\linewidth]{images/research_results/distance-vs-transmission-power/ga/lab-distance-vs-txpower.png}
-      \captionof{figure}{Transmission power vs. distance for lab location using GA.}
+      \captionof{figure}{Transmission power vs. distance for lab location using \gls{GA}.}
       \label{fig:lab_distance_vs_txpower_ga}
   \end{minipage}\hfill
   \begin{minipage}[t]{0.5\textwidth}
       \centering
       \includegraphics[width=1\linewidth]{images/research_results/distance-vs-transmission-power/ga/home-distance-vs-txpower.png}
-      \captionof{figure}{Transmission power vs. distance for home location using GA.}
+      \captionof{figure}{Transmission power vs. distance for home location using \gls{GA}.}
       \label{fig:home_distance_vs_txpower_ga}
   \end{minipage}
 \end{figure}
@@ -156,7 +156,7 @@ The first plot, representing the lab location, displays lower path loss between 
 
 \section{Algorithmic Parameter Analysis}
 
-So far, the analyses for MCM and GA have been based on the applied values to the experimental prototype, with the only differing parameter being the distance between the two different locations, lab and home. The previous experiments provided valuable insights into the performance of both algorithms within the tested parameters. However, it is also important to explore their behavior with different parameters and larger distances for a more comprehensive understanding. To achieve this, a parameter table has been created using the following imaginary values:
+So far, the analyses for \gls{MCM} and \gls{GA} have been based on the applied values to the experimental prototype, with the only differing parameter being the distance between the two different locations, lab and home. The previous experiments provided valuable insights into the performance of both algorithms within the tested parameters. However, it is also important to explore their behavior with different parameters and larger distances for a more comprehensive understanding. To achieve this, a parameter table has been created using the following imaginary values:
 
 \begin{longtable}{>{\hspace{0pt}}m{0.504\linewidth}>{\hspace{0pt}}m{0.367\linewidth}}
   \label{tab:algorithmic_parameter_analysis}\\
@@ -176,11 +176,11 @@ So far, the analyses for MCM and GA have been based on the applied values to the
   \hline\hline
 \end{longtable}
 
-These parameters are described in tables \ref{tab:monte_carlo_parameters} and \ref{tab:ga_parameters}. Although increasing the distance would impact the number of devices and the computational power required for the MCM, the chosen distance represents a reasonable compromise for the given number of devices. In response to the sub-research question 5, the tables below present the MCM and GA outputs based on these different parameters, demonstrating how the algorithms behave under different conditions and larger distances:
+These parameters are described in tables \ref{tab:monte_carlo_parameters} and \ref{tab:ga_parameters}. Although increasing the distance would impact the number of devices and the computational power required for the \gls{MCM}, the chosen distance represents a reasonable compromise for the given number of devices. In response to the sub-research question 5, the tables below present the \gls{MCM} and \gls{GA} outputs based on these different parameters, demonstrating how the algorithms behave under different conditions and larger distances:
 
 \begin{longtable}{>{\hspace{0pt}}m{0.327\linewidth}>{\hspace{0pt}}m{0.452\linewidth}>{\hspace{0pt}}m{0.14\linewidth}}
   \label{tab:mcm_different_parameter_analysis}\\
-  \caption{Monte Carlo Method output based on different parameters.}\\
+  \caption{\gls{MCM} output based on different parameters.}\\
   \hline\hline
   Device                 & $P_{tx} (dBm)$                   & Penalty  \endfirsthead
   \hline
@@ -190,7 +190,7 @@ These parameters are described in tables \ref{tab:monte_carlo_parameters} and \r
 
 \begin{longtable}{>{\hspace{0pt}}m{0.356\linewidth}>{\hspace{0pt}}m{0.452\linewidth}>{\hspace{0pt}}m{0.104\linewidth}}
   \label{tab:ga_different_parameter_analysis}\\
-  \caption{Genetic Algorithm output based on different parameters.}\\
+  \caption{\gls{GA} output based on different parameters.}\\
   \hline\hline
   Device                 & $P_{tx} (dBm)$               & Total  \endfirsthead
   \hline
@@ -198,16 +198,16 @@ These parameters are described in tables \ref{tab:monte_carlo_parameters} and \r
   \hline\hline
 \end{longtable}
 
-While the MCM table may not show any significant differences compared to previous analyses, the transmission power from the GA table does present interesting observations. Upon closer inspection, the transmission power is no longer at the edge range, as seen in past analyses. This outcome is expected since the current transmission power is calculated from much larger distances, while the past analyses were based on closer distances. In smaller distances, lower transmission power values are sufficient to maintain a reliable connection between devices, as the signal propagation is stronger. On the other hand, larger distances require higher transmission power values to ensure the signal can effectively reach and maintain a stable connection with other devices in the network.
+While the \gls{MCM} table may not show any significant differences compared to previous analyses, the transmission power from the \gls{GA} table does present interesting observations. Upon closer inspection, the transmission power is no longer at the edge range, as seen in past analyses. This outcome is expected since the current transmission power is calculated from much larger distances, while the past analyses were based on closer distances. In smaller distances, lower transmission power values are sufficient to maintain a reliable connection between devices, as the signal propagation is stronger. On the other hand, larger distances require higher transmission power values to ensure the signal can effectively reach and maintain a stable connection with other devices in the network.
 
-In the context of the GA plot for transmission power optimization, the optimization line is no longer linear, likely due to the different parameters used, especially the selection method. The max value reaches a high of 5901 $dBm$ but drops to -17 $dBm$ at the lowest point, a notable result. The Y-axis, which shows the transmission power made up of both penalties for each constraint violation and the output transmission power for each iteration from GA, is understandably higher. Even though the plot reached -17 $dBm$, the best transmission power is the one with no penalty, as shown by the GA output in the table.
+In the context of the \gls{GA} plot for transmission power optimization, the optimization line is no longer linear, likely due to the different parameters used, especially the selection method. The max value reaches a high of 5901 $dBm$ but drops to -17 $dBm$ at the lowest point, a notable result. The Y-axis, which shows the transmission power made up of both penalties for each constraint violation and the output transmission power for each iteration from \gls{GA}, is understandably higher. Even though the plot reached -17 $dBm$, the best transmission power is the one with no penalty, as shown by the \gls{GA} output in the table.
 
 \begin{figure}[H]
   \centering
   \begin{minipage}[t]{0.5\textwidth}
       \centering
       \includegraphics[width=1\linewidth]{images/research_results/genetic_algorithm_different_parameter_power.png}
-      \captionof{figure}{GA transmission power optimization based on different parameters.}
+      \captionof{figure}{\gls{GA} transmission power optimization based on different parameters.}
       \label{fig:genetic_algorithm_different_parameter_power}
   \end{minipage}\hfill
   \begin{minipage}[t]{0.5\textwidth}
@@ -231,7 +231,9 @@ The following analysis delves into a comprehensive data table that compares two 
 \noindent\begin{minipage}{\linewidth}
   \centering
   \label{tab:experimental_data_analysis}
-  \captionof{table}{Experimental data analysis across different scenarios.}\begin{tabular}{l|l|l|l|c|c|r|l|lll|lll}
+  \captionsetup{type=table}
+  \captionof{table}{Experimental data analysis across different scenarios.}
+  \begin{tabular}{l|l|l|l|c|c|r|l|lll|lll}
   \hline\hline
   \multicolumn{1}{l}{\multirow{3}{*}{Method}} & \multicolumn{1}{l}{\multirow{3}{*}{Loc}} & \multicolumn{1}{c}{\multirow{3}{*}{Type}} & \multicolumn{1}{l}{\multirow{3}{*}{Mode}} & \multicolumn{1}{l}{\multirow{3}{*}{Ping}}  & \multicolumn{1}{c}{\multirow{3}{*}{\begin{tabular}[c]{@{}c@{}}$T$\\$(s)$\end{tabular}}} & \multicolumn{1}{c}{\multirow{3}{*}{\begin{tabular}[c]{@{}c@{}}$P_{tx}$\\$(dBm)$\end{tabular}}} & \multicolumn{1}{l}{\multirow{3}{*}{Node}} & \multicolumn{6}{c}{Current consumption~$(mA)$}         \\
   \cline{9-14}
@@ -356,7 +358,7 @@ In the analysis of the table \ref{tab:experimental_data_analysis}, a detailed co
 
 \subsection{Mean, Max, and Min Current Analysis}
 
-The analysis of the mean, max, and min current $(mA)$ across all devices, locations, and methods revealed various trends. Overall, the mean current values ranged from 6.19 $mA$ to 11.98 $mA$, with the lowest values observed in the BR series devices and the highest values in the ED series devices. The maximum current values varied from 12.6 $mA$ to 22.64 $mA$, while the minimum current values were between 0.25 $mA$ and 7.53 $mA$. This broad range of values suggests that different devices, methods, and environments may have significant impacts on the current consumption of the devices tested.
+The analysis of the mean, max, and min Current $(mA)$ across all devices, locations, and methods revealed various trends. Overall, the mean current values ranged from 6.19 $mA$ to 11.98 $mA$, with the lowest values observed in the Border Router (BR) series devices and the highest values in the End Device (ED) series devices. The maximum current values varied from 12.6 $mA$ to 22.64 $mA$, while the minimum current values were between 0.25 $mA$ and 7.53 $mA$. This broad range of values suggests that different devices, methods, and environments may have significant impacts on the current consumption of the devices tested.
 
 
 \subsection{Location-Specific Analysis}
@@ -371,7 +373,7 @@ In comparing the first and second iterations, it was observed that the mean, max
 
 \subsection{Device-Specific Analysis}
 
-The device-specific analysis revealed that the BR series devices consistently exhibited the lowest mean, max, and min current values compared to the R and ED series devices. In contrast, the ED series devices had the highest mean, max, and min current values. This suggests that the BR series devices may be more energy-efficient than the other devices, while the ED series devices may require more power to operate. This finding answer sub-research question 7, which aims to compare the power optimization performance of different devices in Maximum and Optimized modes.
+The device-specific analysis revealed that the border router series devices consistently exhibited the lowest mean, max, and min current values compared to the Router (R) and end device series devices. In contrast, the end device series devices had the highest mean, max, and min current values. This suggests that the border router series devices may be more energy-efficient than the other devices, while the end device series devices may require more power to operate. This finding answer sub-research question 7, which aims to compare the power optimization performance of different devices in maximum and optimized modes.
 
 
 \subsection{Type-Specific Analysis}
@@ -383,9 +385,9 @@ Further investigation into this finding revealed that devices with sensors requi
 
 \subsection{Mode-Specific Analysis}
 
-The mode-specific analysis revealed that the devices' performance was affected by the MCM and GA modes. In general, the mean, max, and min current values were higher in the MCM mode compared to the GA mode. This suggests that the MCM mode require more power to operate and maintain, while the GA mode may offer more energy-efficient performance.
+The mode-specific analysis revealed that the devices' performance was affected by the \gls{MCM} and \gls{GA} modes. In general, the mean, max, and min current values were higher in the \gls{MCM} mode compared to the \gls{GA} mode. This suggests that the \gls{MCM} mode require more power to operate and maintain, while the \gls{GA} mode may offer more energy-efficient performance.
 
-Furthermore, when comparing the power optimization performance of the MCM and GA modes, it was found that the GA mode outperformed the MCM mode in terms of energy efficiency. Devices operating in the GA mode consumed less power while still achieving comparable levels of performance, indicating that this mode may be a better option for power optimization. This finding supports the sub-research question 10 on the effect of mode on power optimization, indicating that the choice of mode can have a significant impact on power consumption and optimization performance.
+Furthermore, when comparing the power optimization performance of the \gls{MCM} and \gls{GA} modes, it was found that the \gls{GA} mode outperformed the \gls{MCM} mode in terms of energy efficiency. Devices operating in the \gls{GA} mode consumed less power while still achieving comparable levels of performance, indicating that this mode may be a better option for power optimization. This finding supports the sub-research question 10 on the effect of mode on power optimization, indicating that the choice of mode can have a significant impact on power consumption and optimization performance.
 
 
 \subsection{Method-Specific Analysis}
@@ -393,14 +395,14 @@ Furthermore, when comparing the power optimization performance of the MCM and GA
 Lastly, the method-specific analysis showed that the mean, max, and min current values were lower in the optimized method compared to the maximum method. This indicates that the optimized method may provide a more energy-efficient solution for the devices tested, as it consumes less power overall. This insight could prove useful when selecting a method for future deployments to reduce energy consumption and improve device performance. This finding answer sub-research question 8, which aims to explore the correlation between mean, max, and min current values and the efficiency of power optimization for different methods.
 
 \vspace{3mm}
-In conclusion, the data analysis of the mean, max, and min current values across various parameters, including iteration, device type, location, sensor presence, mode, and method, revealed distinct trends in the devices' power consumption. The BR series devices consistently showed the lowest current values, suggesting better energy efficiency compared to other device types. Devices tested in the lab displayed higher current values than those in the home setting, indicating the influence of environmental factors on device power consumption.
+In conclusion, the data analysis of the mean, max, and min current values across various parameters, including iteration, device type, location, sensor presence, mode, and method, revealed distinct trends in the devices' power consumption. The border router series devices consistently showed the lowest current values, suggesting better energy efficiency compared to other device types. Devices tested in the lab displayed higher current values than those in the home setting, indicating the influence of environmental factors on device power consumption.
 
-Furthermore, devices without sensors generally consumed less power, and the GA mode demonstrated lower current values compared to the MCM mode. Finally, the optimized method appeared to be a more energy-efficient solution compared to the maximum method.
+Furthermore, devices without sensors generally consumed less power, and the \gls{GA} mode demonstrated lower current values compared to the \gls{MCM} mode. Finally, the optimized method appeared to be a more energy-efficient solution compared to the maximum method.
 
 
 \section{Experimental Results}
 
-In this section, the power efficiency of the devices under study is examined, focusing on the maximum and optimized methods applied to MCM and GA modes. The analysis considers the error values obtained from the first and second iteration MCM and GA values, providing insights into the variability and precision of the measurements. This results-driven perspective allows for a comprehensive understanding of the performance differences between the methods and modes under investigation.
+In this section, the power efficiency of the devices under study is examined, focusing on the maximum and optimized methods applied to \gls{MCM} and \gls{GA} modes. The analysis considers the error values obtained from the first and second iteration \gls{MCM} and \gls{GA} values, providing insights into the variability and precision of the measurements. This results-driven perspective allows for a comprehensive understanding of the performance differences between the methods and modes under investigation.
 
 \begin{longtable}{lllllllll}
   \label{tab:experimental_results}\\
@@ -422,14 +424,14 @@ In this section, the power efficiency of the devices under study is examined, fo
   \hline\hline
 \end{longtable}
 
-The table \ref{tab:experimental_results} presents a comprehensive comparison of MCM and GA modes in the Optimized method, with a focus on the percentage values calculated from the maximum current values obtained in previous analyses. Considering the maximum current values for the power optimization process is important because it helps identify the devices' peak current usage. This method offers a clearer understanding of the devices' power efficiency in different modes and iterations. By focusing on the highest current values, a more accurate assessment of the effectiveness of the power optimization process can be achieved, especially during the most demanding situations. This approach addresses the sub-research question 11, which aims to understand the impact of power optimization methods on devices' power efficiency across different modes and iterations.
+The table \ref{tab:experimental_results} presents a comprehensive comparison of \gls{MCM} and \gls{GA} modes in the optimized method, with a focus on the percentage values calculated from the maximum current values obtained in previous analyses. Considering the maximum current values for the power optimization process is important because it helps identify the devices' peak current usage. This method offers a clearer understanding of the devices' power efficiency in different modes and iterations. By focusing on the highest current values, a more accurate assessment of the effectiveness of the power optimization process can be achieved, especially during the most demanding situations. This approach addresses the sub-research question 11, which aims to understand the impact of power optimization methods on devices' power efficiency across different modes and iterations.
 
-In the optimized method, the lab location exhibits a higher percentage for no sensor and ping types in both MCM and GA modes when compared to the home location. Specifically, for the no sensor type, the lab location has a 25.69\% and 26.42\% improvement in MCM and GA modes, respectively, in the first iteration, while for the ping type, the lab location has an 18.52\% and 27.07\% improvement in MCM and GA modes, respectively. In the second iteration, the lab location maintains its higher performance with 20.6\% and 26.31\% improvements in MCM and GA modes for the no sensor type, and 18.39\% and 28.47\% improvements in MCM and GA modes for the ping type. This observation indicates that the devices in the lab location demonstrate better power efficiency.
+In the optimized method, the lab location exhibits a higher percentage for no sensor and ping types in both \gls{MCM} and \gls{GA} modes when compared to the home location. Specifically, for the no sensor type, the lab location has a 25.69\% and 26.42\% improvement in \gls{MCM} and \gls{GA} modes, respectively, in the first iteration, while for the ping type, the lab location has an 18.52\% and 27.07\% improvement in \gls{MCM} and \gls{GA} modes, respectively. In the second iteration, the lab location maintains its higher performance with 20.6\% and 26.31\% improvements in \gls{MCM} and \gls{GA} modes for the no sensor type, and 18.39\% and 28.47\% improvements in \gls{MCM} and \gls{GA} modes for the ping type. This observation indicates that the devices in the lab location demonstrate better power efficiency.
 
-On the other hand, in the home location, the no sensor type shows a 27.12\% and 25.92\% improvement in MCM and GA modes, respectively, in the first iteration, while for the ping type, there is a 19.24\% and 26.19\% improvement in MCM and GA modes, respectively. In the second iteration, the home location has a 24.38\% and 24.25\% improvement in MCM and GA modes for the no sensor type, and 24.84\% and 27.47\% improvements in MCM and GA modes for the ping type.
+On the other hand, in the home location, the no sensor type shows a 27.12\% and 25.92\% improvement in \gls{MCM} and \gls{GA} modes, respectively, in the first iteration, while for the ping type, there is a 19.24\% and 26.19\% improvement in \gls{MCM} and \gls{GA} modes, respectively. In the second iteration, the home location has a 24.38\% and 24.25\% improvement in \gls{MCM} and \gls{GA} modes for the no sensor type, and 24.84\% and 27.47\% improvements in \gls{MCM} and \gls{GA} modes for the ping type.
 
-Errors were calculated based on the differences between the first and second iteration values for MCM and GA modes. The presence of errors might be attributed to various factors, such as device inconsistencies, environmental factors, or potential limitations in the experimental setup. These errors affect the research by introducing a level of uncertainty in the results, making it necessary to interpret the findings with caution, which addresses the second sub-research question 12. For instance, in the lab location, the no sensor type has errors of 5.09\% and 0.11\% in MCM and GA modes, while in the home location, errors are 2.74\% and 1.67\% for the same modes.
+Errors were calculated based on the differences between the first and second iteration values for \gls{MCM} and \gls{GA} modes. The presence of errors might be attributed to various factors, such as device inconsistencies, environmental factors, or potential limitations in the experimental setup. These errors affect the research by introducing a level of uncertainty in the results, making it necessary to interpret the findings with caution, which addresses the second sub-research question 12. For instance, in the lab location, the no sensor type has errors of 5.09\% and 0.11\% in \gls{MCM} and \gls{GA} modes, while in the home location, errors are 2.74\% and 1.67\% for the same modes.
 
-In conclusion, the analysis demonstrates the effectiveness of parameter optimization in developing a power-optimized Thread mesh wireless network, addressing the main research question and the problem definition. Both MCM and GA modes outperform the maximum method, with GA optimization consistently offering better optimization results than MCM across different locations and device types. This indicates that the GA approach significantly contributes to lowering power consumption in Thread mesh wireless networks by optimizing transmission power parameter more effectively than the MCM method.
+In conclusion, the analysis demonstrates the effectiveness of parameter optimization in developing a power-optimized Thread mesh wireless network, addressing the main research question and the problem definition. Both \gls{MCM} and \gls{GA} modes outperform the maximum method, with \gls{GA} optimization consistently offering better optimization results than \gls{MCM} across different locations and device types. This indicates that the \gls{GA} approach significantly contributes to lowering power consumption in Thread mesh wireless networks by optimizing transmission power parameter more effectively than the \gls{MCM} method.
 
-The algorithmic approach, specifically the GA optimization, can be integrated into the system by adjusting transmission power parameter according to the optimization results. By monitoring the network conditions and transmission power, the Thread mesh wireless network can maintain optimal energy efficiency. The results provide a solid foundation for future exploration and enhancements in power optimization using algorithmic approaches, addressing the challenges of consuming higher power, ultimately realizing the full potential of Thread-based wireless communication in a wide range of low-powered IoT network fields.
+The algorithmic approach, specifically the \gls{GA} optimization, can be integrated into the system by adjusting transmission power parameter according to the optimization results. By monitoring the network conditions and transmission power, the Thread mesh wireless network can maintain optimal energy efficiency. The results provide a solid foundation for future exploration and enhancements in power optimization using algorithmic approaches, addressing the challenges of consuming higher power, ultimately realizing the full potential of Thread-based wireless communication in a wide range of low-powered \gls{IoT} network fields.

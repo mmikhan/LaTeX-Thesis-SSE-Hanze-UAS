@@ -8,7 +8,7 @@
 \RequirePackage{setspace}
 \RequirePackage{graphicx}
 \RequirePackage[utf8]{inputenc}
-% \RequirePackage[acronym,toc,nonumberlist]{glossaries}
+\RequirePackage[acronym,toc,nonumberlist]{glossaries}
 \RequirePackage{emptypage}
 
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{report}}
