@@ -5,50 +5,37 @@
 The objective of the mathematical model is to build a Thread network that adheres to specific mathematical constraints, ensuring a well-functioning network with the optimum device types, sensitivity, and \gls{RSSI}. By complying with the constraints, the Thread network can be effectively optimized for both performance and energy consumption. The constraints of the model are as follows:
 
 \begin{enumerate}
-    \item To establish a link between the sensors and end devices, the \gls{RSSI} of each end device must be approximately above the sensitivity of each end device. This ensures a stable connection between the devices \cite{wu2014study}.
-    \item The transmission power limitation, ranging from -20 $dBm$ to 8 $dBm$, is set according to the hardware specifications of the devices in the Thread network, ensuring optimal performance while facilitating power optimization techniques within these constraints for energy efficiency \cite{semiconductor_nrf52840_2018_1}.
-    \item The number of \glspl{REED} must be equal to the number of routers and the leader because, if a router is lost, a connected \gls{REED} must become a router to replace the dead router and maintain network resilience.
-    \item To establish a connection between the end devices and routers, the \gls{RSSI} of each router must be approximately above the sensitivity of each router. This guarantees a stable link between the devices and the routers \cite{wu2014study}.
-    \item To establish a connection between the routers and border routers, the \gls{RSSI} of each border router must be approximately above the sensitivity of each border router, ensuring a reliable link between the network components \cite{wu2014study}.
+    \item To establish a link between the devices within the network, the \gls{RSSI} of each device must be approximately above the sensitivity of the device, which is -100 $dBm$ with \gls{IEEE} 802.15.4 \cite{Semiconductor_Nordic_Product_Brief_2018_2.0}. This ensures a stable connection between the devices \cite{wu2014study}.
+    \item The transmission power limitation for all types of devices, ranging from -20 $dBm$ to 8 $dBm$, is set according to the hardware specifications of the devices in the Thread network, ensuring optimal performance while facilitating power optimization techniques within these constraints for energy efficiency \cite{semiconductor_nrf52840_2018_1}.
+    \item The number of \glspl{REED} must be equal to the number of routers and the leader because, if a router is lost, a connected \gls{REED} must become a router to replace the dead router and maintain network resilience as part of the Thread self-healing feature \cite{Thread_Group_Fundamentals}.
+    \item \glspl{SED} are end devices that save energy by entering a low-power sleep mode when not actively communicating. \glspl{SED} can be present or absent in a network, but their inclusion helps optimize power consumption due to their energy-efficient sleep periods \cite{Thread_Group_Fundamentals}.
+    \item In Thread networks, a leader router is always present, automatically elected through a decentralized process. This router manages network-wide configurations and operations, ensuring consistent performance and stability. Its constant presence supports the smooth functioning of the Thread network, adapting to changes in network topology or router failures \cite{Thread_Group_Fundamentals}.
+    \item In a mesh network, at least two routers are required to establish connectivity. However, having three or more routers, including a leader, greatly improves the network's resilience, redundancy, and coverage. Therefore, to create a more robust mesh network with a leader, it is recommended to have a minimum of three routers, with one of them serving as the leader. This configuration ensures enhanced network performance and maintains seamless communication throughout the network \cite{girgis2014solving}.
+    \item Thread networks can have multiple border routers, with at least two present to prevent a single point of failure. This redundancy ensures continuous connectivity and communication between the Thread network and other \gls{IP}-based networks, maintaining network stability and reliability even if one border router encounters a failure \cite{Thread_Group_Fundamentals}.
 \end{enumerate}
 
-The following mathematical model is designed for this purpose:
+The following mathematical model is designed for this purpose \cite{girgis2014solving}:
 
 \begin{equation}\label{eq:minimize_power}
     \begin{aligned}
-        Min\sum_{i=1}^{M}P_t^i
+        Min\sum_{i=1}^{M}P_{tx}^i
     \end{aligned}
 \end{equation}
 
 \textbf{Subjects to:}
-\begin{equation}\label{eq:mathematical_constraints_end_device}
+\begin{equation}\label{eq:mathematical_constraints}
     \begin{split}
-        RSSI_{ED}^j>EDSensitivity,j\in1,\cdots,N \\
+        RSSI_{Device}^j>Sensitivity,j\in1,\cdots,N \\
         -20dBm{\le P}_t^j\le8dBm \\
-        N_{REED}=n_{Router}+n_{Leader} \\
-    \end{split}
-\end{equation}
-
-\begin{equation}\label{eq:mathematical_constraints_router}
-    \begin{split}
-        {RSSI}_{Router}^k>RouterSensitivity,k\in1,\cdots,O \\
-        -{20dBm\le P}_t^k\le8dBm
-    \end{split}
-\end{equation}
-
-\begin{equation}\label{eq:mathematical_constraints_border_router}
-    \begin{split}
-        {RSSI}_{BD}^L>BDSensitivity,L\in1,\cdots,P \\
-        -{20dBm\le P}_t^L\le8dBm \\
-        Sensitivity=-100dBm \\
+        N_{REED}=N_{Router}+N_{Leader} \\
         SED\in0,1 \\
-        n_{Leader}=1 \\
-        n_{Router}+n_{Leader}\geq3 \\
-        n_{BR}=2
+        N_{Leader}=1 \\
+        N_{Router}+N_{Leader}\geq3 \\
+        N_{BR}=2
     \end{split}
 \end{equation}
 
-Where $P_t$ represents the transmit power $(dBm)$ of each one of the $M$ devices, $ED$ is end device, $N_{REED}$ is the number of the \glspl{REED}, $n_{Router}$ is the number of the routers, $n_{Leader}$ is number of the leaders, $N$ is amount of end devices, $O$ is the number of routers, $P$ is the number of border eouters, $SED$ is \acrlong{SED}, and $Sensitivity$ is $-100 dBm$ with \gls{IEEE} 802.15.4 \cite{Semiconductor_Nordic_Product_Brief_2018_2.0}.
+Where $P_{tx}$ represents the transmit power $(dBm)$ of each one of the $M$ devices and $N$ is amount of devices.
 
 \section{\texorpdfstring{\acrlong{MCM}}{MCM} Process}\label{sec:monte_carlo_method_process}
 
@@ -65,15 +52,23 @@ The \gls{MCM} is initiated to optimize the Thread network, considering the key p
     Param & Description
     \endfirsthead
     \hline
-    $N_d$     & The total number of devices participating in the network, which is set to 8 for this research, representing a small-scale \gls{IoT} network.                                                                              \\
-    $P_{tx}$  & Determines the signal strength for each device, randomly generated in a range between -20 $dBm$ and 8 $dBm$ according to the mathematical constraints, affecting network connectivity and energy consumption.       \\
-    $F_c$     & The carrier frequency used for calculating \gls{RSSI} using the general path loss model, set at 2.4 ${GH}_z$, based on Thread protocol specification.                                                                     \\
-    $D_0$     & A reference distance of 0.25 $m$, associated with the carrier frequency $F_c$, employed in the path loss model to calculate signal attenuation.                                                                     \\
-    $d$       & Represents the distance between two devices in the network, as illustrated in figures \ref{fig:distance_matrix_lab} and \ref{fig:distance_matrix_home}, influencing the strength of the signal received by devices. \\
-    $n$       & The path loss exponent, set to 5.0, which represents the rate at which the signal power decays with distance in the path loss model.                                                                                \\
-    $\sigma$  & The variance of the shadowing component, set to 3.0 $dB$, accounts for signal fluctuations due to obstacles and multipath propagation in the environment.                                                           \\
-    $G_t$     & The transmit antenna gain, set to 0.0 $dB$, which reflects the effectiveness of the transmitting antenna in directing the radio waves towards the receiving device.                                                 \\
-    $G_r$     & The receive antenna gain, set to 0.0 $dB$, indicating the receiving antenna's ability to capture incoming radio waves.                                                                                              \\
+    $N_d$     & The total number of devices participating in the network, which is set to 8 for this research, representing a small-scale \gls{IoT} network.                                                                                                             \\
+    \hline
+    $P_{tx}$  & Determines the signal strength for each device, randomly generated in a range between -20 $dBm$ and 8 $dBm$ according to the mathematical constraints, affecting network connectivity and energy consumption \cite{semiconductor_nrf52840_2018_1}.       \\
+    \hline
+    $F_c$     & The carrier frequency used for calculating \gls{RSSI} using the general path loss model, set at 2.4 ${GH}_z$, based on Thread protocol specification \cite{Thread_Group_Fundamentals}.                                                                   \\
+    \hline
+    $D_0$     & A reference distance of 0.25 $m$, associated with the carrier frequency $F_c$, employed in the log-distance path loss model in equation \ref{eq:log_distance_path_loss} to calculate the signal attenuation \cite{cho2010mimo}.                          \\
+    \hline
+    $d$       & Represents the distance between two devices in the network, as illustrated in figures \ref{fig:distance_matrix_lab} and \ref{fig:distance_matrix_home}, influencing the strength of the signal received by devices.                                      \\
+    \hline
+    $n$       & The path loss exponent shown in equation \ref{eq:log_distance_path_loss}, set to 5.0, which represents the rate at which the signal power decays with distance in the path loss model \cite{cho2010mimo}.                                                \\
+    \hline
+    $\sigma$  & The variance of the shadowing component, set to 3.0 $dB$, accounts for signal fluctuations due to obstacles and multipath propagation in the environment as shown in equation \ref{eq:log_normal_shadowing_model} \cite{cho2010mimo}.                    \\
+    \hline
+    $G_t$     & The transmit antenna gain, set to 0.0 $dB$, which reflects the effectiveness of the transmitting antenna in directing the radio waves towards the receiving device \cite{semiconductor_nrf52840_2018_1}.                                                 \\
+    \hline
+    $G_r$     & The receive antenna gain, set to 0.0 $dB$, indicating the receiving antenna's ability to capture incoming radio waves \cite{semiconductor_nrf52840_2018_1}.                                                                                              \\
     \hline\hline
 \end{longtable}
 
@@ -98,7 +93,7 @@ The objective function aims to build a Thread network using the optimal network 
 
 \begin{equation}\label{eq:objective_function}
     \begin{aligned}
-        Min\sum_{i=1}^{M}P_t^i+penal_1+penal_2+penal_3\ldots+penal_{nr}
+        Min\sum_{i=1}^{M}P_{tx}^i+penal_1+penal_2+penal_3+penal_{nr}
     \end{aligned}
 \end{equation}
 
@@ -116,11 +111,11 @@ The \gls{MCM} converges on an optimal solution that satisfies necessary constrai
     \STATE Initialize \gls{MCM} parameters: $N_d$, $d$, $F_c$, $D_0$, $n$, $\sigma$, $G_t$, $G_r$
     \WHILE{network}
         \STATE devices, txpower, position $\gets$ generate\_random\_numbers($N_d$)
-        \STATE penalty, path\_loss, rssi\_uplink, rssi\_downlink $\gets$ mathematical\_constraints\_evaluation($N_d$, $d$, $F_c$, $D_0$, $n$, $\sigma$, $G_t$, $G_r$)
+        \STATE penalty, path\_loss, rssi $\gets$ mathematical\_constraints\_evaluation($N_d$, $d$, $F_c$, $D_0$, $n$, $\sigma$, $G_t$, $G_r$)
         \IF{penalty is False}
             \STATE network $\gets$ False
         \ENDIF
-        \RETURN devices, txpower, penalty, path\_loss, rssi\_uplink, rssi\_downlink
+        \RETURN devices, txpower, penalty, path\_loss, rssi
     \ENDWHILE
     \end{algorithmic}
 \end{algorithm}
@@ -141,32 +136,100 @@ The initial steps of the \gls{GA} process start with creating a random populatio
     \hline\hline
     Param            & Description \endfirsthead
     \hline
-    Population size  & The number of individuals in the population representing different possible network configurations are set to 100 for this research.                                                                                                                                                                                             \\
-    Population       & An initial random population is created with the specified population size and \gls{MCM} output, which includes device types, transmission power, and device positions, representing different possible network configurations. For instance: [ [3, 5, 2, 5, 1, 5, 0, 0], [-20, 0, 0, -8, 0, -12, 0, -20], [1, 2, 3, 4, 5, 6, 7, 8]].  \\
-    Max iteration    & The maximum number of iterations to be performed by the Genetic Algorithm, for instance, 100 in this research.                                                                                                                                                                                                                   \\
-    Mutation rate    & The probability of mutation is set at 0.1 for this research, determining the frequency of random changes introduced to the offspring's genetic information during the optimization process, which helps maintain genetic diversity within the population.                                                                        \\
-    Selection method & The method used for selecting individuals from the current population to create the next generation, such as roulette wheel selection, tournament, or sorted. In this research, the sorted selection method was utilized.                                                                                                        \\
-    Mutation method  & The method used for mutating individuals affect how genetic information is altered during the mutation process. In this research, the swap mutation method was utilized.                                                                                                                                                         \\
+    Population size  & The number of individuals in the population representing different possible network configurations are set to 100 for this research.                                                                                                                                                                                                                             \\
+    \hline
+    Population       & An initial random population is created with the specified population size and \gls{MCM} output, which includes device types, transmission power, and device positions, representing different possible network configurations. For instance: [[device: 3, 5, 2, 5, 1, 5, 0, 0], [position: 1, 2, 3, 4, 5, 6, 7, 8], [txpower: -20, 0, 0, -8, 0, -12, 0, -20]].  \\
+    \hline
+    Max iteration    & The maximum number of iterations to be performed by the \gls{GA}, for instance, 100 in this research.                                                                                                                                                                                                                                                            \\
+    \hline
+    Mutation rate    & The probability of mutation is set at 0.1 for this research, determining the frequency of random changes introduced to the offspring's genetic information during the optimization process, which helps maintain genetic diversity within the population.                                                                                                        \\
+    \hline
+    Selection method & The method used for selecting individuals from the current population to create the next generation, such as roulette wheel selection, tournament, or sorted. In this research, the sorted selection method was utilized.                                                                                                                                        \\
+    \hline
+    Mutation method  & The method used for mutating individuals affect how genetic information is altered during the mutation process. In this research, the swap mutation method was utilized.                                                                                                                                                                                         \\
     \hline\hline
 \end{longtable}
 
 \subsection{Evaluate Fitness}
 
-For each candidate in the population, calculate its fitness score. The fitness measures how effectively the configuration optimizes power consumption, considering path loss and \gls{RSSI} sensitivity. Lower power consumption results in a higher fitness value, helping the algorithm identify the best individuals for producing the next generation.
+In the fitness evaluation stage of the \gls{GA}, each individual in the population is evaluated based on a fitness function. This fitness function is responsible for computing the fitness score of each individual, which, in this context, is represented as a chromosome \cite{lambora2019genetic}. Each chromosome in the population is composed of a list representing different device types, their respective positions, transmission powers, and an initially assigned penalty score of zero. For instance, here are some examples of chromosomes in the population:
 
-\subsection{Selection, Crossover, and Mutation}
+\begin{enumerate}
+    \item \textbf{Chromosome 1}: [[device: 2, 5, 3, 3, 5, 2, 2, 4], [position: 1, 2, 3, 4, 5, 6, 7, 8], [txpower: -8, 8, 0, -16, 0, -8, -20, 8], [penalty: 0]]
+    \item \textbf{Chromosome 2}: [[device: 2, 5, 3, 3, 5, 2, 2, 4], [position: 1, 2, 3, 4, 5, 6, 7, 8], [txpower: -12, 4, -8, -8, -20, 0, -8, -20], [penalty: 0]]
+    \item \textbf{Chromosome 3}: [[device: 2, 5, 3, 3, 5, 2, 2, 4], [position: 1, 2, 3, 4, 5, 6, 7, 8], [txpower: 4, -12, -20, -4, -8, -12, -20, -8], [penalty: 0]]
+\end{enumerate}
 
-In this step, parents are selected from the current population based on their fitness values using sorted selection method. This ensures that individuals with higher fitness values have a higher chance of being chosen as parents, promoting the selection of potentially better solutions.
+For each chromosome, the fitness function calculates the path loss and \gls{RSSI} sensitivity for each device configuration. The fitness function ensures that each chromosome adheres to the established mathematical constraints. When a chromosome violates a constraint, a penalty is added to the penalty score of that chromosome. The calculation and addition of penalties occur after the evaluation of each constraint, adjusting the fitness value accordingly. The fitness value, consequently, provides a measure of the quality of each solution, with lower penalties indicating more desirable solutions.
 
-Next, the crossover operation is performed on the selected parents to create offspring by exchanging genetic material between pairs of parents. The crossover process combines the characteristics of parent individuals, allowing the offspring to inherit properties from both parents, which helps explore new potential solutions in the search space.
+\subsection{Selection}
 
-Finally, the mutation operation introduces small random changes to the offspring's genetic material by flipping bits within a certain probability (mutation rate). This process enhances diversity within the population and helps to prevent the algorithm from converging prematurely to suboptimal solutions by maintaining variation and allowing the exploration of alternative search paths.
+In the selection process, the sorted method is employed to identify the fittest individuals in the current population \cite{lambora2019genetic}. The entire population is sorted based on their penalties for constraint violations. The most fit individuals are then selected and stored in a separate list. Let's consider the following three chromosomes excluding device types and positions:
 
-\subsection{Population Update and Termination}
+\begin{enumerate}
+    \item \textbf{Chromosome 1}: [[txpower: -8, 8, 0, -16, 0, -8, -20, 8], [penalty: 0]]
+    \item \textbf{Chromosome 2}: [[txpower: -12, 4, -8, -8, -20, 0, -8, -20], [penalty: 4000]]
+    \item \textbf{Chromosome 3}: [[txpower: 4, -12, -20, -4, -8, -12, -20, -8], [penalty: 3000]]
+\end{enumerate}
 
-After the selection, crossover, and mutation processes, the new offspring are evaluated for their fitness. The population is then updated by replacing all individuals in the current population with the newly generated offspring. This step ensures that the best solutions found so far are preserved and that the overall fitness of the population improves over time.
+The sorted list of chromosomes will look like this:
 
-The \gls{GA} process iterates through the aforementioned steps for a predefined number of iterations. Once the termination criteria are met, the algorithm returns the best solution found throughout the entire evolutionary process, representing the most optimal network configuration discovered by the \gls{GA}. Refer to the following pseudocode for an algorithmic overview of the \acrlong{GA} process:
+\begin{enumerate}
+    \item \textbf{Chromosome 1}: [[txpower: -8, 8, 0, -16, 0, -8, -20, 8], [penalty: 0]]
+    \item \textbf{Chromosome 3}: [[txpower: 4, -12, -20, -4, -8, -12, -20, -8], [penalty: 3000]]
+    \item \textbf{Chromosome 2}: [[txpower: -12, 4, -8, -8, -20, 0, -8, -20], [penalty: 4000]]
+\end{enumerate}
+
+Chromosome 1, having the lowest penalty, is the fittest chromosome. This approach ensures that the algorithm focuses on the most promising solutions as it progresses through the crossover and mutation stages.
+
+\subsection{Crossover}
+
+The crossover operation utilizes genetic material from the output of the selection method to form two parent solutions, subsequently creating offspring that inherit properties from both parents. This process aims to explore new potential solutions in the search space by allowing offspring to possess a mix of characteristics from their parents \cite{lambora2019genetic}. For instance, consider the following parent chromosomes selected from the previous selection process:
+
+\begin{enumerate}
+    \item \textbf{Chromosome 1}: [[txpower: \textcolor{red}{-8, 8, 0, -16, 0, -8, -20, 8}], [penalty: 0]]
+    \item \textbf{Chromosome 2}: [[txpower: \textcolor{blue}{ 4, -12, -20, -4, -8, -12, -20, -8}], [penalty: 3000]]
+\end{enumerate}
+
+A random crossover point is determined within the length of the parent solutions, say at the fourth index for this instance. Consequently, offspring are generated by merging the first part of Parent Chromosome 1 up to the crossover point with the second part of Parent Chromosome 2 from the crossover point onwards, and vice versa. This results in the following offspring:
+
+\begin{enumerate}
+    \item \textbf{Chromosome 1}: [[txpower: \textcolor{red}{-8, 8, 0, -16,} \textcolor{blue}{-8, -12, -20, -8}], [penalty: TBD]]
+    \item \textbf{Chromosome 2}: [[txpower: \textcolor{blue}{4, -12, -20, -4,} \textcolor{red}{0, -8, -20, 8}], [penalty: TBD]]
+\end{enumerate}
+
+Here, ``TBD'' indicates that the penalty for each offspring chromosome will be determined in subsequent processes based on the updated txpower values.
+
+Through this method, two new offspring are produced, each inheriting distinct portions of the parent solutions. This mechanism potentially leads to enhanced solutions in subsequent generations, thereby ensuring the evolution of the population towards optimal solutions.
+
+\subsection{Mutation}
+
+The mutation stage further enhances the diversity within the population, ensuring a thorough exploration of the search space. Offspring from the crossover stage serve as the input to the mutation operation \cite{lambora2019genetic}. For instance, consider the following offspring solutions:
+
+\begin{enumerate}
+    \item \textbf{Chromosome 1}: [[txpower: -8, 8, 0, -16, -8, -12, -20, -8], [penalty: TBD]]
+    \item \textbf{Chromosome 2}: [[txpower: 4, -12, -20, -4, 0, -8, -20, 8], [penalty: TBD]]
+\end{enumerate}
+
+A mutation rate controls the probability of mutation for each element within the offspring solution. If a random value, obtained through a uniform distribution, is less than the mutation rate, the respective element undergoes mutation \cite{lambora2019genetic}. In this instance, a mutation could be a change in the txpower value. Let's say the fourth element of Offspring Chromosome 1 and the second element of Offspring Chromosome 2 are selected for mutation. The txpower values may then be adjusted, resulting in the following mutated offspring:
+
+\begin{enumerate}
+    \item \textbf{Chromosome 1}: [[txpower: -8, 8, 0, \textcolor{red}{-10}, -8, -12, -20, -8], [penalty: TBD]]
+    \item \textbf{Chromosome 2}: [[txpower: 4, \textcolor{blue}{-10}, -20, -4, 0, -8, -20, 8], [penalty: TBD]]
+\end{enumerate}
+
+Here, ``TBD'' also implies that the penalty for each mutated offspring chromosome will be recalculated in subsequent processes based on the new txpower values.
+
+This mutation process ensures that the offspring solutions can investigate different combinations of transmission powers, which could potentially yield superior overall solutions in future generations.
+
+\subsection{Population Update}
+
+The algorithm iteratively refines the population by applying the selection, crossover, and mutation operations in each generation. After the offspring are created through crossover and mutation, their fitness values are calculated again. The population is then updated by replacing the current individuals with the new offspring, sorted based on their fitness values. This process of updating the population ensures that the best solutions are carried forward to the next generation \cite{lambora2019genetic}.
+
+
+\subsection{Termination}
+
+The algorithm continues this process of generating new offspring and updating the population for a specified number of iterations. Once the termination criterion is met, the algorithm concludes, and the final population along with their fitness values are returned as output \cite{lambora2019genetic}. The best solution can be extracted from this final population, representing the optimal device types, optimized transmission power, and positions for each device in the given problem scenario. The following pseudocode gives an overview of the \acrlong{GA}process:
 
 \begin{algorithm}[H]
     \caption{\gls{GA} pseudocode for transmission power optimization.}
@@ -190,7 +253,7 @@ The \gls{GA} process iterates through the aforementioned steps for a predefined 
     \end{algorithmic}
 \end{algorithm}
 
-The output is a list of optimized transmission power values for each device, along with device types, positions, and penalty values. For a comprehensive understanding of the \acrlong{GA}'s implementation, refer to the appendix \ref{appendix} for the complete code.
+The output is a list of optimized transmission power values for each device, along with optimal device types, and positions. For a comprehensive understanding of the \acrlong{GA}'s implementation, refer to the appendix \ref{appendix} for the complete code.
 
 \section{Experimental Setup}
 
@@ -198,7 +261,7 @@ The prototype was built to validate the output from \gls{MCM} and \gls{GA}, usin
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{images/research_design/prototype.png}
+    \includegraphics[width=1\textwidth]{images/research_design/prototype.png}
     \caption{Thread network topology of the prototype.}
     \label{fig:prototype}
 \end{figure}

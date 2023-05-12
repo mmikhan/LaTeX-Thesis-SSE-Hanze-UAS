@@ -1,40 +1,40 @@
 \chapter{Situational \& Theoretical Analysis}\label{chap:situational_theoretical_analysis}
 
 \section{The Thread Protocol}\label{sec:the_thread_protocol}
-Thread is a low-power, wireless \gls{IoT} protocol designed to provide secure, reliable, and scalable networking for connected devices. Developed by the Thread Group, which includes notable members such as Nest Labs (a subsidiary of Google), ARM, and Silicon Labs, Thread was introduced in 2014 to address the growing need for a standardized and efficient \gls{IoT} networking solution. Built on open standards, Thread is an \gls{IPv6} based protocol that utilizes the \gls{IEEE} 802.15.4 radio standard for communication, making it compatible with a wide range of existing devices and technologies \cite{Thread_Group_Fundamentals}.
+Thread is a low-power, wireless \gls{IoT} protocol designed to provide secure, reliable, and scalable networking for connected devices. Developed by the Thread Group, which includes notable members such as Nest Labs (a subsidiary of Google), \gls{ARM}, and Silicon Labs, Thread was introduced in 2014 to address the growing need for a standardized and efficient \gls{IoT} networking solution. Built on open standards, Thread is an \gls{IPv6} based protocol that utilizes the \gls{IEEE} 802.15.4 radio standard for communication, making it compatible with a wide range of existing devices and technologies \cite{Thread_Group_Fundamentals}.
 
 
 \subsection{Architecture and Components}
-Thread's architecture is based on a mesh topology, allowing devices to communicate directly with each other, bypassing the need for a central hub or router. This mesh design enhances network resilience, as devices can automatically re-route communication through alternative paths if a connection is lost. The key components of the Thread protocol include \cite{Thread_Group_Fundamentals}:
+Thread's architecture is based on a mesh topology, allowing devices to communicate directly with each other, bypassing the need for a central hub or router. This mesh design enhances network resilience, as devices can automatically re-route communication through alternative paths if a connection is lost \cite{Thread_Group_Fundamentals}. The key components of the Thread protocol include:
 
 \begin{enumerate}
-    \item \textbf{Border routers}: These devices serve as gateways between the Thread network and external \gls{IP} networks, such as Wi-Fi or Ethernet networks. They manage network access, security, and routing of data between the Thread network and other networks.
-    \item \textbf{Leader routers}: They play a vital role in managing the network by assigning addresses to devices, coordinating routing updates, and maintaining overall network stability.
-    \item \textbf{Routers}: These devices are responsible for routing data within the Thread network. They can also act as parent devices to other devices within the network, providing connectivity to devices with limited routing capabilities.
-    \item \textbf{End devices}: These devices communicate directly with their parent routers and are typically low-power devices, such as sensors or actuators. End devices do not participate in routing or network management.
-    \item \textbf{Links}: Thread networks use links to establish connections between devices, allowing them to communicate and exchange data. Links are essential for maintaining the mesh topology of Thread networks.
+    \item \textbf{Border Routers}: These devices serve as gateways between the Thread network and external \gls{IP} networks, such as Wi-Fi or Ethernet networks. They manage network access, security, and routing of data between the Thread network and other networks \cite{Thread_Group_Fundamentals}.
+    \item \textbf{Leader Routers}: They play a vital role in managing the network by assigning addresses to devices, coordinating routing updates, and maintaining overall network stability \cite{Thread_Group_Fundamentals}.
+    \item \textbf{Routers}: These devices are responsible for routing data within the Thread network. They can also act as parent devices to other devices within the network, providing connectivity to devices with limited routing capabilities \cite{Thread_Group_Fundamentals}.
+    \item \textbf{End Devices}: These devices communicate directly with their parent routers and are typically low-power devices, such as sensors or actuators. End devices do not participate in routing or network management \cite{Thread_Group_Fundamentals}.
+    \item \textbf{Links}: Thread networks use links to establish connections between devices, allowing them to communicate and exchange data. Links are essential for maintaining the mesh topology of Thread networks \cite{Thread_Group_Fundamentals}.
 \end{enumerate}
 
-Figure \ref{fig:thread_topology} shows a visual representation of the basic Thread network topology, which includes all the listed components. By combining these components, the Thread network architecture provides a robust, scalable, and energy-efficient solution for \gls{IoT} applications, including the MOOD-Sense project.
+Figure \ref{fig:thread_topology} shows a visual representation of the basic Thread network topology, which includes all the listed components \cite{Thread_Group_Fundamentals}. By combining these components, the Thread network architecture provides a robust, scalable, and energy-efficient solution for \gls{IoT} applications, including the MOOD-Sense project.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\textwidth]{images/situational_theoretical_analysis/thread_topology.png}
-    \caption{Basic Thread network topology.}
+    \includegraphics[width=0.8\textwidth]{images/situational_theoretical_analysis/thread_topology.png}
+    \caption{Basic Thread network topology \cite{Thread_Group_Fundamentals}.}
     \label{fig:thread_topology}
 \end{figure}
 
 
 \subsection{Key Features and Advantages}
 
-Considering the specific requirements of various \gls{IoT} applications, including the MOOD-Sense project, the following features and advantages of Thread make it a suitable choice \cite{Thread_Group_Fundamentals}:
+Considering the specific requirements of various \gls{IoT} applications, including the MOOD-Sense project, the following features and advantages of Thread make it a suitable choice:
 
 \begin{enumerate}
-    \item \textbf{Low power consumption}: Thread's energy-efficient design aligns with the need for long battery life in devices that continuously monitor, collect, and transmit data in various \gls{IoT} scenarios.
-    \item \textbf{Scalability}: The mesh topology of Thread networks allows for the seamless addition of new devices, enabling \gls{IoT} projects to adapt and expand as needed.
-    \item \textbf{Security}: Thread's end-to-end encryption and secure commissioning processes ensure that communication between devices is protected, maintaining data privacy and security across diverse applications.
-    \item \textbf{Robustness and reliability}: Thread's self-healing mesh network design ensures reliable and resilient communication, which is crucial for continuous monitoring and data collection in \gls{IoT} applications.
-    \item \textbf{Interoperability}: Thread's open standards ensure compatibility with a wide range of devices and technologies, allowing \gls{IoT} projects to integrate various sensors, devices, and communication technologies within a single, unified network.
+    \item \textbf{Low Power Consumption}: Thread's energy-efficient design aligns with the need for long battery life in devices that continuously monitor, collect, and transmit data in various \gls{IoT} scenarios \cite{Thread_Group_Fundamentals}.
+    \item \textbf{Scalability}: The mesh topology of Thread networks allows for the seamless addition of new devices, enabling \gls{IoT} projects to adapt and expand as needed \cite{Thread_Group_Fundamentals}.
+    \item \textbf{Security}: Thread's end-to-end encryption and secure commissioning processes ensure that communication between devices is protected, maintaining data privacy and security across diverse applications \cite{Thread_Group_Fundamentals}.
+    \item \textbf{Robustness and Reliability}: Thread's self-healing mesh network design ensures reliable and resilient communication, which is crucial for continuous monitoring and data collection in \gls{IoT} applications \cite{Thread_Group_Fundamentals}.
+    \item \textbf{Interoperability}: Thread's open standards ensure compatibility with a wide range of devices and technologies, allowing \gls{IoT} projects to integrate various sensors, devices, and communication technologies within a single, unified network \cite{Thread_Group_Fundamentals}.
 \end{enumerate}
 
 Overall, the Thread protocol's features address the key question of its suitability for \gls{IoT} applications in various contexts, including the MOOD-Sense project. Offering a secure, reliable, and energy-efficient networking solution, Thread meets the requirements for continuous monitoring, improved data collection, and seamless integration across industries.
@@ -50,7 +50,7 @@ Parameters influencing transmission power in a Thread network are crucial for op
 
 \subsubsection{Distance}
 
-The distance between devices directly influences the transmission power, as a longer distance between devices typically results in higher path loss. Therefore, devices that are farther apart may require higher transmission power levels to maintain a stable connection. The Euclidean distance matrix calculates the distance between pairs of devices. The distance between devices $i$ and $j$ with coordinates $\left(x1,y1\right)$ and $\left(x2,y2\right)$ is calculated as follows:
+The distance between devices directly influences the transmission power, as a longer distance between devices typically results in higher path loss \cite{wu2014study}. Therefore, devices that are farther apart may require higher transmission power levels to maintain a stable connection. The Euclidean distance matrix calculates the distance between pairs of devices \cite{dokmanic2015euclidean}. The distance between devices $i$ and $j$ with coordinates $\left(x1,y1\right)$ and $\left(x2,y2\right)$ is calculated as follows:
 
 \begin{equation}\label{eq:euclidean_distance}
     distance\left(i,j\right)=\sqrt{\left(x^2-x^1\right)^2+\left(y^2-y^1\right)^2}
@@ -76,63 +76,61 @@ The gain of the antennas used in the network can also affect the transmission po
 
 \subsubsection{Path Loss}
 
-Path loss refers to the attenuation of the radio signal as it propagates through the environment. It depends on factors such as the distance between transmitter and receiver, frequency, and environmental conditions. Path loss has a significant impact on the transmission power required to maintain reliable communication. This research analyzes three key path loss models and their applications in wireless communication systems.
+Path loss refers to the attenuation of the radio signal as it propagates through the environment, depending on factors such as distance, frequency, and environmental conditions \cite{cho2010mimo}. It significantly impacts the transmission power needed for reliable communication. In this research, the log-normal shadowing model is used for path loss calculations. To understand this model, the three key path loss models are discussed, providing insight into the principles and mathematical formulations involved in path loss calculations for power optimization.
 
-\paragraph{Free-Space Propagation Model}
+\begin{enumerate}
+    \item \textbf{Free-Space Propagation Model}: The free-space propagation model is used for predicting the received signal strength in \gls{LOS} environments, where there are no obstacles between the transmitter and receiver. It is often adopted for satellite communication systems. The Friis equation \ref{eq:friis_equation} describes the received power at distance $d$, considering non-isotropic antennas with transmit gain $G_t$ and receive gain $G_r$ \cite{cho2010mimo}:
 
-The free-space propagation model is used for predicting the received signal strength in \gls{LOS} environments, where there are no obstacles between the transmitter and receiver. It is often adopted for satellite communication systems. The Friis equation \ref{eq:friis_equation} describes the received power at distance $d$, considering non-isotropic antennas with transmit gain $G_t$ and receive gain $G_r$ \cite{cho2010mimo}:
+    \begin{equation}\label{eq:friis_equation}
+        P_r\left(d\right)=\frac{P_tG_tG_r\lambda^2}{\left(4\pi\right)^2d^2L}
+    \end{equation}
 
-\begin{equation}\label{eq:friis_equation}
-    P_r\left(d\right)=\frac{P_tG_tG_r\lambda^2}{\left(4\pi\right)^2d^2L}
-\end{equation}
+    Where $P_t$ represents the transmit power $\left(w\right)$, $d$ is the distance between transmitter and receiver $\left(m\right)$, $\lambda$ is the wavelength of radiation $\left(m\right)$, $G_t$ is transmit gain $(dB)$, $G_r$ receive gain $(dB)$, and $L$ is the system loss factor independent of the propagation environment. The free-space path loss ${PL}_F\left(d\right)$ can be directly derived without any system loss from equation \ref{eq:friis_equation}:
 
-Where $P_t$ represents the transmit power $\left(w\right)$, $d$ is the distance between transmitter and receiver $\left(m\right)$, $\lambda$ is the wavelength of radiation $\left(m\right)$, $G_t$ is transmit gain $(dB)$, $G_r$ receive gain $(dB)$, and $L$ is the system loss factor independent of the propagation environment. The free-space path loss ${PL}_F\left(d\right)$ can be directly derived without any system loss from equation \ref{eq:friis_equation}:
+    \begin{equation}\label{eq:free_space_path_loss}
+        PL_F\left(d\right)\left[dB\right]=10log\left(\frac{P_t}{P_r}\right)=-10log\left(\frac{G_tG_r\lambda^2}{\left(4\pi\right)^2d^2}\right)
+    \end{equation}
 
-\begin{equation}\label{eq:free_space_path_loss}
-    PL_F\left(d\right)\left[dB\right]=10log\left(\frac{P_t}{P_r}\right)=-10log\left(\frac{G_tG_r\lambda^2}{\left(4\pi\right)^2d^2}\right)
-\end{equation}
+    Without antenna gains (i.e., $G_t=G_r=1$), equation \ref{eq:free_space_path_loss} is reduced to:
 
-Without antenna gains (i.e., $G_t=G_r=1$), equation \ref{eq:free_space_path_loss} is reduced to:
+    \begin{equation}\label{eq:free_space_path_loss_no_antenna_gain}
+        PL_F\left(d\right)\left[dB\right]=10log\left(\frac{P_t}{P_r}\right)=20log\left(\frac{4\pi d}{\lambda}\right)
+    \end{equation}
 
-\begin{equation}\label{eq:free_space_path_loss_no_antenna_gain}
-    PL_F\left(d\right)\left[dB\right]=10log\left(\frac{P_t}{P_r}\right)=20log\left(\frac{4\pi d}{\lambda}\right)
-\end{equation}
+    \item \textbf{Log-Distance Path Loss Model}: The log-distance path loss model is a more generalized approach, accounting for the varying path loss exponent $n$ depending on the environment. The path loss at distance $d$ is given by equation \ref{eq:log_distance_path_loss}, where $d_0$ is the reference distance at which the path loss inherits the characteristics of free-space loss \cite{cho2010mimo}:
 
-\paragraph{Log-Distance Path Loss Model}
-The log-distance path loss model is a more generalized approach, accounting for the varying path loss exponent $n$ depending on the environment. The path loss at distance $d$ is given by equation \ref{eq:log_distance_path_loss}, where $d_0$ is the reference distance at which the path loss inherits the characteristics of free-space loss \cite{cho2010mimo}:
+    \begin{equation}\label{eq:log_distance_path_loss}
+        PL_{LD}\left(d\right)\left[dB\right]=PL_F\left(d_0\right)+10nlog\left(\frac{d}{d_0}\right)
+    \end{equation}
 
-\begin{equation}\label{eq:log_distance_path_loss}
-    PL_{LD}\left(d\right)\left[dB\right]=PL_F\left(d_0\right)+10nlog\left(\frac{d}{d_0}\right)
-\end{equation}
+    Where $d_0$ is a reference distance and $n$ corresponds to free space which tends to change as shown in the following table.
 
-Where $d_0$ is a reference distance and $n$ corresponds to free space which tends to change as shown in the following table.
-
-\begin{longtable}{>{\hspace{0pt}}m{0.462\linewidth}>{\hspace{0pt}}m{0.467\linewidth}}
-    \label{tab:path_loss_exponent}\\
-    \caption{Path loss exponent for different environments.}\\
-    \hline\hline
-    Environment                   & Path Loss Exponent $(n)$  \endfirsthead
-    \hline
-    Free space                    & 2                         \\
-    Urban area cellular radio     & 2.7 - 3.5                 \\
-    Shadowed urban cellular radio & 3 - 5                     \\
-    In building line-of-sight     & 1.6 - 1.8                 \\
-    Obstructed in building        & 4 - 6                     \\
-    Obstructed in factories       & 2 - 3                     \\
-    \hline\hline
+    \begin{longtable}{>{\hspace{0pt}}m{0.462\linewidth}>{\hspace{0pt}}m{0.467\linewidth}}
+        \label{tab:path_loss_exponent}\\
+        \caption{Path loss exponent for different environments.}\\
+        \hline\hline
+        Environment                   & Path Loss Exponent $(n)$  \endfirsthead
+        \hline
+        Free space                    & 2                         \\
+        Urban area cellular radio     & 2.7 - 3.5                 \\
+        Shadowed urban cellular radio & 3 - 5                     \\
+        In building line-of-sight     & 1.6 - 1.8                 \\
+        Obstructed in building        & 4 - 6                     \\
+        Obstructed in factories       & 2 - 3                     \\
+        \hline\hline
     \end{longtable}
 
-The path loss exponent $\left(n\right)$ varies based on the environment, as shown in table \ref{tab:path_loss_exponent}, and helps to adjust the log-distance path loss model for more accurate predictions. Lower values represent environments with fewer obstructions, such as free space, while higher values indicate more complex environments with buildings or other obstacles.
+    The path loss exponent $\left(n\right)$ varies based on the environment, as shown in table \ref{tab:path_loss_exponent}, and helps to adjust the log-distance path loss model for more accurate predictions. Lower values represent environments with fewer obstructions, such as free space, while higher values indicate more complex environments with buildings or other obstacles \cite{cho2010mimo}.
 
-\paragraph{Log-Normal Shadowing Model}
+    \item \textbf{Log-Normal Shadowing Model}: The log-normal shadowing model considers the random nature of shadowing effects, making it more suitable for realistic situations. The model is given by equation \ref{eq:log_normal_shadowing_model}, where $X_\sigma$ is a Gaussian random variable with a zero mean and a standard deviation of $\sigma$ \cite{cho2010mimo}:
 
-The log-normal shadowing model considers the random nature of shadowing effects, making it more suitable for realistic situations. The model is given by equation \ref{eq:log_normal_shadowing_model}, where $X_\sigma$ is a Gaussian random variable with a zero mean and a standard deviation of $\sigma$:
+    \begin{equation}\label{eq:log_normal_shadowing_model}
+        PL\left(d\right)\left[dB\right]=\overline{PL}\left(d\right)+X_\sigma=PL_F\left(d_0\right)+10nlog\left(\frac{d}{d_0}\right)+X_\sigma
+    \end{equation}
 
-\begin{equation}\label{eq:log_normal_shadowing_model}
-    PL\left(d\right)\left[dB\right]=\overline{PL}\left(d\right)+X_\sigma=PL_F\left(d_0\right)+10nlog\left(\frac{d}{d_0}\right)+X_\sigma
-\end{equation}
+    In other words, this particular model allows the receiver at the same distance $d$ to have a different path loss, which varies with the random shadowing effect $X_\sigma$ \cite{cho2010mimo}.
+\end{enumerate}
 
-In other words, this particular model allows the receiver at the same distance $d$ to have a different path loss, which varies with the random shadowing effect $X_\sigma$ \cite{cho2010mimo}.
 
 \subsubsection{Device Types}
 
@@ -144,40 +142,66 @@ To optimize transmission power in a Thread network, algorithmic approaches can b
 
 \subsubsection{\acrlong{MCM}}
 
-The \acrfull{MCM} is a statistical method that uses random sampling and repeated computation to obtain numerical results. In the context of transmission power optimization, \gls{MCM} will be used to generate random sets of device types, positions, and transmission powers, evaluate their performance, and identify the most suitable configuration for the Thread network \cite{kroese2014monte}. The steps for implementing \gls{MCM} in this research are as follows:
+The \acrfull{MCM} is a popular computational technique for simulating complex systems and estimating numerical results using random sampling. It is particularly useful for solving problems with a large number of variables and an extensive search space, where traditional analytical methods may be inefficient or infeasible \cite{kroese2014monte}. In the context of this research, \gls{MCM} is employed to generate and evaluate potential network configurations for optimizing power consumption. The key steps involved in the \gls{MCM} are as follows:
 
 \begin{enumerate}
-    \item Define the parameter space, including the range of values for each parameter involved in the network configuration.
-    \item Generate a large number of random configurations within the parameter space.
-    \item Evaluate the performance of each configuration using predefined constraints, such as types of devices.
-    \item Identify the configuration that satisfies the constraints and use it as the initial configuration for the GA.
+    \item \textbf{Problem Formulation}: Define the problem and its parameters, including the objective function, constraints, and variables \cite{kroese2014monte}. For this research, the goal is to establish a reliable Thread network configuration with optimal device types and roles while minimizing the initial power consumption of the entire network, ensuring network performance and reliability are maintained.
+    \item \textbf{Sampling}: Generate a random sample of potential solutions to the problem within the search space. This involves randomly selecting values for the variables within their specified ranges \cite{kroese2014monte}. In the case of this research, the sample consists of different network configurations with various device types and roles, along with varying transmission power settings for each device in the network.
+    \item \textbf{Evaluation}: Assess the quality of each sampled solution using the objective function and constraints defined in the problem formulation \cite{kroese2014monte}. In this research, the objective function is to achieve the optimal network configuration that ensures reliability and minimizes the initial power consumption of the entire network.
+    \item \textbf{Termination}: Repeat the sampling and evaluation steps for a predefined number of iterations or until a convergence criterion is met, such as reaching a desired level of accuracy or observing no significant improvement over a number of iterations \cite{kroese2014monte}.
 \end{enumerate}
+
 
 \subsubsection{\acrlong{GA}}
 
-The \acrfull{GA} is an optimization technique inspired by the process of natural selection. It uses a population of possible solutions and evolves them over time using genetic operators, such as mutation and crossover. In this research, \gls{GA} will be used to further refine the initial configuration obtained from \gls{MCM} and find the optimal transmission power for each device in the Thread network \cite{lambora2019genetic}. The steps for implementing \gls{GA} in this research are as follows:
+The \acrfull{GA} is an optimization technique inspired by the process of natural selection. It uses a population of possible solutions and evolves them over time using genetic operators, such as mutation and crossover. The goal is to find an optimal solution for the given problem, such as transmission power in this research \cite{lambora2019genetic}. In a typical \gls{GA} process, the following steps are executed:
 
 \begin{enumerate}
-    \item Initialize the population with the best configuration obtained from \gls{MCM}.
-    \item Evaluate the fitness of each individual in the population based on the predefined constraints.
-    \item Select the fittest individuals for reproduction using selection techniques, such as tournament selection or roulette wheel selection.
-    \item Apply genetic operators (crossover and mutation) to generate offspring from the selected parents.
-    \item Replace the least fit individuals in the population with the offspring.
-    \item Repeat steps 2 to 5 for a predefined number of generations or until a convergence criterion is met.
-    \item Obtain the final optimal configuration from the fittest individual in the population.
+    \item \textbf{Initialization}: A population of candidate solutions is generated, either randomly or using a heuristic method. The population size is determined by a predefined parameter. Each individual in the population represents a potential solution to the problem \cite{norouzi2014genetic}. In this research, the output from \gls{MCM} is used as the initial population.
+    \item \textbf{Fitness Evaluation}: The quality of each candidate solution in the population is assessed using a fitness function, which quantifies how well the individual solves the problem. The fitness value provides an objective measure to compare and rank individuals within the population \cite{norouzi2014genetic}. Each solution in the population is validated against the predefined constraints set forth in this research.
+    \item \textbf{Selection}: Based on their fitness values, individuals are selected for reproduction. Selection methods, such as tournament selection or roulette wheel selection, are employed to choose the fittest individuals, favoring those with higher fitness values to participate in the creation of offspring for the next generation \cite{lambora2019genetic}. For instance, consider the following example where two binary format chromosomes are selected:
+    \begin{enumerate}
+        \item \textbf{Chromosome 1}: 1101100100110110
+        \item \textbf{Chromosome 2}: 1101111000011110
+    \end{enumerate}
+    \item \textbf{Crossover}: This genetic operator combines the genetic information of two parent individuals to create offspring that inherit characteristics from both parents. Crossover promotes exploration of the search space and the exchange of beneficial traits between individuals \cite{lambora2019genetic}. Consider the following example:
+    \begin{enumerate}
+        \item \textbf{Parent Chromosome 1}: \textcolor{red}{11011} | \textcolor{red}{00100110110}
+        \item \textbf{Parent Chromosome 2}: \textcolor{blue}{11011} | \textcolor{blue}{11000011110}
+    \end{enumerate}
+    After performing crossover operation in random manner, the offspring are:
+    \begin{enumerate}
+        \item \textbf{Offspring 1}: \textcolor{red}{11011} | \textcolor{blue}{11000011110}
+        \item \textbf{Offspring 2}: \textcolor{blue}{11011} | \textcolor{red}{00100110110}
+    \end{enumerate}
+    In this case, the genetic information from the two parent chromosomes has been recombined to form the offspring chromosomes, which carry traits from both parents.
+    \item \textbf{Mutation}: Mutation is another genetic operator that introduces small random changes in the genetic information of individuals. This process helps maintain diversity within the population and prevents the algorithm from getting stuck in local optima \cite{lambora2019genetic}. For instance, the following binary chromosomes can undergo mutation, where selected bits are randomly switched from 0 to 1, or vice versa:
+    \begin{enumerate}
+        \item \textbf{Original Parent Chromosome 1}: 1101100100110110
+        \item \textbf{Original Parent Chromosome 2}: 1101111000011110
+    \end{enumerate}
+    After performing mutation operation in random manner, the offspring become:
+    \begin{enumerate}
+        \item \textbf{Mutated Offspring 1}: 110\textcolor{red}{0}111000011110
+        \item \textbf{Mutated Offspring 2}: 11011\textcolor{red}{0}1000011\textcolor{red}{0}10
+    \end{enumerate}
+    In this example, the original parent chromosomes have been mutated to create the new offspring chromosomes. The mutation operation has introduced new characteristics into the offspring, helping to maintain genetic diversity in the population.
+    \item \textbf{Replacement}: The least fit individuals in the population are replaced with the newly created offspring, ensuring the population size remains constant across generations \cite{lambora2019genetic}.
+    \item \textbf{Termination}: The algorithm repeats the process of fitness evaluation, selection, crossover, mutation, and replacement for a predefined number of generations or until a convergence criterion is met, such as reaching a desired level of fitness or observing no significant improvement over a number of generations \cite{lambora2019genetic}.
 \end{enumerate}
 
 By combining \gls{MCM} and \gls{GA}, the proposed algorithmic approach efficiently explores the parameter space and identifies the optimal configuration that minimizes power consumption while maintaining network performance and reliability in the Thread network. Addressing the sub-research question 3, this research demonstrates the effectiveness of the combined approach in achieving the desired outcomes.
 
+
 \subsection{Step-by-Step Guide for Power Optimization}
 
 \begin{enumerate}
-    \item \textbf{Identify the influencing factors and parameters}: Determine the parameters that impact transmission power, such as distance between devices, path loss, signal strength, interference, and device types.
-    \item \textbf{Develop the algorithms}: Implement the \gls{MCM} and \gls{GA} algorithms to address power optimization in the Thread network, considering the constraints and requirements of the MOOD-Sense project.
-    \item \textbf{Determine optimal device types and network configuration}: Use the \gls{MCM} to identify the appropriate device types and optimal network configuration for the Thread network.
-    \item \textbf{Optimize transmission power settings}: Apply the \gls{GA} to optimize the transmission power settings for each device in the network, ensuring minimal energy consumption while maintaining reliable communication.
-    \item \textbf{Evaluate network performance}: Assess the overall performance of the Thread network, ensuring that the optimized power settings do not compromise the network's reliability or efficiency.
-    \item \textbf{Iterate and refine}: Continuously refine the algorithms and network configuration as necessary to maintain optimal power consumption and network performance.
+    \item \textbf{Identify the Influencing Factors and Parameters}: Determine the parameters that impact transmission power, such as distance between devices, path loss, signal strength, interference, and device types.
+    \item \textbf{Develop the Algorithms}: Implement the \gls{MCM} and \gls{GA} algorithms to address power optimization in the Thread network, considering the constraints and requirements of the MOOD-Sense project.
+    \item \textbf{Determine Optimal Device Types and Network Configuration}: Use the \gls{MCM} to identify the appropriate device types and optimal network configuration for the Thread network.
+    \item \textbf{Optimize Transmission Power Settings}: Apply the \gls{GA} to optimize the transmission power settings for each device in the network, ensuring minimal energy consumption while maintaining reliable communication.
+    \item \textbf{Evaluate Network Performance}: Assess the overall performance of the Thread network, ensuring that the optimized power settings do not compromise the network's reliability or efficiency.
+    \item \textbf{Iterate and Refine}: Continuously refine the algorithms and network configuration as necessary to maintain optimal power consumption and network performance.
 \end{enumerate}
 
 Through exploring the factors influencing transmission power and employing algorithmic approaches, this research seeks to provide a comprehensive understanding of power optimization in a Thread network and its implications on energy efficiency and network performance in the context of the MOOD-Sense project.
@@ -189,45 +213,45 @@ In this research, several hardware components were employed to implement and opt
 
 \subsection{\texorpdfstring{\gls{nRF}}{nRF}52840 \texorpdfstring{\acrlong{DK}}{DK}}
 
-The nRF52840 \gls{DK} is a versatile single-board \acrlong{DK} for Bluetooth 5, Bluetooth mesh, Thread, Zigbee, 802.15.4, \gls{ANT}, and 2.4 $GHz$ proprietary applications on the nRF52840 \gls{SoC}. In this research, the nRF52840 \gls{DK} was used to develop and test the Thread network, acting as routers and end devices in the network topology. The \acrlong{DK} enabled the research team to implement and evaluate the network performance and power consumption under different configurations \cite{Semiconductor_Nordic_Product_Brief_2018_2.0}.
+The nRF52840 \gls{DK} is a versatile single-board \acrlong{DK} for Bluetooth 5, Bluetooth mesh, Thread, Zigbee, 802.15.4, \gls{ANT}, and 2.4 $GHz$ proprietary applications on the nRF52840 \gls{SoC} \cite{Semiconductor_Nordic_Product_Brief_2018_2.0}. In this research, the nRF52840 \gls{DK} was used to develop and test the Thread network, acting as routers and end devices in the network topology. The \acrlong{DK} enabled the research team to implement and evaluate the network performance and power consumption under different configurations.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.3\textwidth]{images/situational_theoretical_analysis/nRF52840_DK.png}
-    \caption{\gls{nRF}52840 \gls{DK}.}
+    \caption{\gls{nRF}52840 \gls{DK} \cite{Semiconductor_Nordic_Product_Brief_2018_2.0}.}
     \label{fig:nRF52840_DK}
 \end{figure}
 
 \subsection{nRF52840 Dongle}
 
-The \gls{nRF}52840 Dongle is a small, low-cost \gls{USB} device for the \gls{nRF} Connect for Desktop \gls{PC} tool. It supports Bluetooth 5, Bluetooth mesh, Thread, Zigbee, 802.15.4, \gls{ANT}, and 2.4 $GHz$ proprietary protocols. In the research, the Dongle was used to extend the network by adding more nodes, facilitating the evaluation of scalability and network performance in larger network configurations sources \cite{Semiconductor_Nordic_Dongle_Brief_2018_2.0}.
+The \gls{nRF}52840 Dongle is a small, low-cost \gls{USB} device for the \gls{nRF} Connect for Desktop \gls{PC} tool. It supports Bluetooth 5, Bluetooth mesh, Thread, Zigbee, 802.15.4, \gls{ANT}, and 2.4 $GHz$ proprietary protocols \cite{Semiconductor_Nordic_Dongle_Brief_2018_2.0}. In the research, the Dongle was used to extend the network by adding more nodes, facilitating the evaluation of scalability and network performance in larger network configurations.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.3\textwidth]{images/situational_theoretical_analysis/nRF52840_Dongle.png}
-    \caption{\gls{nRF}52840 Dongle.}
+    \caption{\gls{nRF}52840 Dongle \cite{Semiconductor_Nordic_Dongle_Brief_2018_2.0}.}
     \label{fig:nRF52840_dongle}
 \end{figure}
 
 \subsection{\texorpdfstring{\acrlong{PPK}}{PPK} II}
 
-The \acrfull{PPK} II is an easy-to-use tool for measuring and optimizing the power consumption of \gls{IoT} devices. In this research, the \gls{PPK} II was utilized to measure the power consumption of the \gls{nRF}52840 \gls{DK} devices in various network configurations, enabling the research to assess the energy efficiency of the network and identify areas for improvement \cite{Semiconductor_Nordic_PPK_II_2018_1.0}.
+The \acrfull{PPK} II is an easy-to-use tool for measuring and optimizing the power consumption of \gls{IoT} devices \cite{Semiconductor_Nordic_PPK_II_2018_1.0}. In this research, the \gls{PPK} II was utilized to measure the power consumption of the \gls{nRF}52840 \gls{DK} devices in various network configurations, enabling the research to assess the energy efficiency of the network and identify areas for improvement.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.3\textwidth]{images/situational_theoretical_analysis/nRF_Power_Profiler_Kit_II.png}
-    \caption{\gls{PPK} II.}
+    \caption{\gls{PPK} II \cite{Semiconductor_Nordic_PPK_II_2018_1.0}.}
     \label{fig:nRF_Power_Profiler_Kit_II}
 \end{figure}
 
 \subsection{Raspberry Pi 4}
 
-The Raspberry Pi 4 model B is a single-board computer used for various applications, including \gls{IoT} development. In this research, the Raspberry Pi 4 served as a border router and provided an interface between the Thread network and external networks. The Raspberry Pi 4 allowed the research to evaluate the overall network performance and data exchange with external systems \cite{alm2019internet}.
+The Raspberry Pi 4 model B is a single-board computer used for various applications, including \gls{IoT} development \cite{alm2019internet}. In this research, the Raspberry Pi 4 served as a border router and provided an interface between the Thread network and external networks. The Raspberry Pi 4 allowed the research to evaluate the overall network performance and data exchange with external systems.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.3\textwidth]{images/situational_theoretical_analysis/Raspberry_Pi_4.jpg}
-    \caption{Raspberry Pi 4 model B.}
+    \caption{Raspberry Pi 4 model B \cite{alm2019internet}.}
     \label{fig:Raspberry_Pi_4}
 \end{figure}
 
@@ -238,16 +262,16 @@ By understanding the roles of each hardware component in the research, it become
 Using these hardware components poses certain constraints and limitations on the research, with some potential consequences:
 
 \begin{enumerate}
-    \item \textbf{Limited scalability}: The number of available \gls{nRF}52840 \gls{DK} and \gls{nRF}52840 Dongle devices may limit the size of the network being optimized, potentially affecting the generalizability of the results. This limitation might make it challenging to extrapolate the findings to larger networks or different device types.
-    \item \textbf{Hardware-specific performance}: The optimization results might be influenced by the specific hardware used, such as the \gls{nRF}52840 \gls{DK} and \gls{nRF}52840 Dongle, and may not be directly applicable to other devices or platforms. As a consequence, further research and testing may be required to confirm the findings' applicability in different hardware contexts.
-    \item \textbf{Measurement accuracy}: The accuracy of the \gls{PPK} II may impact the precision of the power consumption measurements, potentially affecting the optimization results. This limitation could lead to underestimation or overestimation of energy savings, influencing the overall conclusions regarding the network's energy efficiency.
+    \item \textbf{Limited Scalability}: The number of available \gls{nRF}52840 \gls{DK} and \gls{nRF}52840 Dongle devices may limit the size of the network being optimized, potentially affecting the generalizability of the results. This limitation might make it challenging to extrapolate the findings to larger networks or different device types.
+    \item \textbf{Hardware-Specific Performance}: The optimization results might be influenced by the specific hardware used, such as the \gls{nRF}52840 \gls{DK} and \gls{nRF}52840 Dongle, and may not be directly applicable to other devices or platforms. As a consequence, further research and testing may be required to confirm the findings' applicability in different hardware contexts.
+    \item \textbf{Measurement Accuracy}: The accuracy of the \gls{PPK} II may impact the precision of the power consumption measurements, potentially affecting the optimization results. This limitation could lead to underestimation or overestimation of energy savings, influencing the overall conclusions regarding the network's energy efficiency.
 \end{enumerate}
 
 These hardware-related challenges could influence the research outcomes, making it essential to be aware of the limitations and consider their potential impact on the findings when interpreting the results and applying them to real-world scenarios.
 
-\subsection{Implications for Wireless Network Technology Development}
+\subsection{Implications for Wireless Network Development}
 
-Taking into account the hardware constraints and limitations, the implications for wireless network technology development in the context of this research can be examined. The chosen hardware components, such as the \gls{nRF}52840 \gls{DK}, and \gls{nRF}52840 Dongle directly impact the energy efficiency, performance, and scalability of the Thread network. Using these components enabled the investigation and optimization of power consumption and network performance. However, it is essential to acknowledge that hardware limitations might pose challenges when adapting the network to various \gls{IoT} applications or scaling it to larger configurations. By addressing the sub-research question 4, this study highlights the importance of hardware selection and its implications for future wireless network technology development.
+Taking into account the hardware constraints and limitations, the implications for wireless network development in the context of this research can be examined. The chosen hardware components, such as the \gls{nRF}52840 \gls{DK}, and \gls{nRF}52840 Dongle directly impact the energy efficiency, performance, and scalability of the Thread network. Using these components enabled the investigation and optimization of power consumption and network performance. However, it is essential to acknowledge that hardware limitations might pose challenges when adapting the network to various \gls{IoT} applications or scaling it to larger configurations. By addressing the sub-research question 1, this study highlights the importance of hardware selection and its implications for future wireless network technology development.
 
 \section{Literature Research}\label{sec:literature_research}
 
@@ -255,6 +279,6 @@ Thread network power consumption research has been limited but offers promising 
 
 In the paper by \textcite{sheth2002implementation} presents a practical implementation of transmit power control for 802.11b wireless networks. They focus on optimizing transmit power to reduce power consumption while maintaining correct reception of packets. The researchers achieved a maximum power savings of 25\%, including idling power, by implementing their adaptive transmit power control algorithm as a user-level application layer process. This work is relevant to power optimization strategies in \gls{IoT} applications, such as Thread networks. \textcite{1576539} investigate the impact of transmission power on the throughput capacity of finite ad hoc wireless networks using a scheduling-based \gls{MAC} protocol in their paper, such as \gls{TDMA}. The authors demonstrate that by properly increasing the nodal transmit power level, the capacity of an ad hoc wireless network can be maximized, regardless of nodal distribution and traffic pattern. The primary finding is that higher transmission power contributes to increased combinatorial diversity, optimizing joint scheduling and routing schemes, which is valuable for the development of efficient \gls{IoT} applications using protocols like Thread.
 
-In the realm of algorithm optimization, the \gls{MCM} is a robust, efficient, flexible, and scalable tool used across various fields, including science, finance, and engineering. Research by \textcite{kroese2014monte} emphasizes \gls{MCM}'s popularity and its applications in areas like industrial engineering, operations research, physical processes, random graphs, finance, biology, medicine, and computer science. The authors highlight \gls{MCM}'s simplicity, strength in randomness, and theoretical justification. On the other hand, \gls{GA} is a heuristic optimization algorithm that handles non-linear, non-convex, and intermittent problems. It is widely applied in various engineering and scientific applications. One study by \textcite{ferentinos2005energy} employs \gls{GA} to optimize \glspl{WSN} for precision agriculture applications. The research determines active sensors, cluster heads, and signal ranges while considering network connectivity, energy conservation, and application requirements. Results indicate that \gls{GA}-generated designs outperform random deployments regarding connectivity and energy consumption. \textcite{norouzi2014genetic} explore the potential of \gls{GA} in optimizing the operational stages of \glspl{WSN}, discussing node placement, network coverage, clustering, data aggregation, and routing. Simulations demonstrate that \gls{GA}-based approaches outperform existing protocols, suggesting that \gls{GA} can optimize \glspl{WSN} in military, medical, and commercial applications.
+In the realm of algorithm optimization, the \gls{MCM} is a robust, efficient, flexible, and scalable tool used across various fields, including science, finance, and engineering. Research by \textcite{kroese2014monte} emphasizes \gls{MCM}'s popularity and its applications in areas like industrial engineering, operations research, physical processes, random graphs, finance, biology, medicine, and computer science. The authors highlight \gls{MCM}'s simplicity, strength in randomness, and theoretical justification. \textcite{girgis2014solving} propose a \gls{GA} and \gls{SA} for solving the \gls{WMN} design problem. The study aims to minimize cost and determine the number of used gateways in \gls{WMN} under constraints, with experimental results proving the effectiveness of \gls{GA} and \gls{SA} in minimizing network costs while satisfying quality of service. The authors find that GA outperforms \gls{SA} in small-size networks, while \gls{SA} performs better in large-size networks. On the other hand, \gls{GA} is a heuristic optimization algorithm that handles non-linear, non-convex, and intermittent problems. It is widely applied in various engineering and scientific applications. One study by \textcite{ferentinos2005energy} employs \gls{GA} to optimize \glspl{WSN} for precision agriculture applications. The research determines active sensors, cluster heads, and signal ranges while considering network connectivity, energy conservation, and application requirements. Results indicate that \gls{GA}-generated designs outperform random deployments regarding connectivity and energy consumption. \textcite{norouzi2014genetic} explore the potential of \gls{GA} in optimizing the operational stages of \glspl{WSN}, discussing node placement, network coverage, clustering, data aggregation, and routing. Simulations demonstrate that \gls{GA}-based approaches outperform existing protocols, suggesting that \gls{GA} can optimize \glspl{WSN} in military, medical, and commercial applications.
 
-In summary, although the literature on Thread power optimization is limited, the results from existing studies suggest that the protocol has significant potential for reducing energy consumption in low-power wireless networking applications. More research is needed to fully understand and optimize the power consumption of Thread networks in large-scale deployments. Meanwhile, \gls{MCM} and \gls{GA} have significantly influenced quantitative problem-solving across numerous research fields, becoming indispensable tools for understanding complex systems and optimizing parameters in various applications. However, their computational complexity increases with the number of parameters, making it challenging to apply to large-scale problems.
+In summary, although the literature on Thread power optimization is limited, the results from existing studies suggest that the protocol has significant potential for reducing energy consumption in low-power wireless networking applications. For instance, the research by \textcite{sheth2002implementation} demonstrates the effectiveness of optimizing transmit power to reduce power consumption, emphasizing the potential of using algorithmic approaches for power optimization in \gls{IoT} applications such as Thread networks. Furthermore, the research by \textcite{girgis2014solving} shows that \gls{GA} can effectively minimize network costs while satisfying quality of service, highlighting the potential for \gls{GA} optimization in similar wireless network scenarios. Given the success of \gls{MCM} and \gls{GA} in other optimization scenarios, they were chosen to be explored within the context of Thread network power optimization, building upon the limited available literature and attempting to address the gaps in knowledge. This research aims to contribute valuable insights and drive further advancements in the field by applying the proven effectiveness of \gls{MCM} and \gls{GA} in power optimization, aligning with the findings of related studies and enhancing the potential for optimizing power consumption in low-power \gls{IoT} applications.
