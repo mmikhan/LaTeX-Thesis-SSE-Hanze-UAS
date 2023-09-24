@@ -97,9 +97,6 @@
     Master Smart Systems Engineering
 
     \vspace{5.5em}
-    Confidential document
-
-    \vspace{5.5em}
     Groningen\\
 
     \@courseyear
